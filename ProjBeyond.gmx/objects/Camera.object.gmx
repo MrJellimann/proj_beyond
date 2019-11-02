@@ -27,11 +27,13 @@
             <kind>1</kind>
             <string>_target = noone;
 
-camera_width = 640;
-camera_height = 480;
+camera_width = view_wview;
+camera_height = view_hview;
 
 camera_half_width = camera_width / 2;
 camera_half_height = camera_height / 2;
+
+camera_shake = 10;
 </string>
           </argument>
         </arguments>
@@ -54,11 +56,30 @@ camera_half_height = camera_height / 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(target))
+            <string>if (instance_exists(_target))
 {
-    view_xview = target.x - camera_half_width;
-    view_yview = target.y - camera_half_height;
+    if (distance_to_point(_target.x, _target.y) &lt; 1)
+    {
+        x = _target.x;
+        y = _target.y;
+    }
+    else
+    {
+        var _dir, _dist;
+        _dir = point_direction(_target.x, _target.y, x, y);
+        _dist = distance_to_point(_target.x, _target.y);
+        
+        x = lengthdir_x(_dist * .75, _dir);
+        y = lengthdir_y(_dist * .75, _dir); 
+    }
 }
+
+if (camera_shake &gt; 0)
+    camera_shake -= 0.1;
+
+view_xview = x - camera_half_width;
+view_yview = y - camera_half_height;
+view_angle = choose(1, -1) * camera_shake;
 </string>
           </argument>
         </arguments>

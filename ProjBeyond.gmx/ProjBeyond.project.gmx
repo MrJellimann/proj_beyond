@@ -36,7 +36,11 @@
     <object>objects\GameManager</object>
     <object>objects\Entity</object>
     <object>objects\Item</object>
+    <object>objects\Player</object>
   </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_Game</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
