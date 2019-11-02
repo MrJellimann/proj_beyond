@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-5</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,22 +25,40 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Movement
+            <string>alarm[0] = 5 + irandom(15);
+
 v_spd = 0;
 h_spd = 0;
-spd_max = 3;
-spd_amount = spd_max / 4;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (instance_exists(GameManager.ground))
+{
+    surface_set_target(GameManager.ground.ground_surf);
+        draw_sprite(sprBloodSplatter, irandom(sprite_get_number(sprBloodSplatter)), x, y);
+    surface_reset_target();
+}
 
-// Animations
-image_speed = 0;
-
-// Combat
-look_dir = 0;
-weapon_length = 20;
-
-// Stats
-max_hp = 10;
-_hp = max_hp;
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -63,39 +81,33 @@ _hp = max_hp;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Horizontal
-if (h_spd != 0)
-{
-    if (place_free(x + h_spd, y))
-        x += h_spd;
-    else
-    {
-        while (place_free(x + sign(h_spd), y))
-        {
-            x += sign(h_spd);
-        }
-    }
-}
-
-// Vertical
-if (v_spd != 0)
-{
-    if (place_free(x, y + v_spd))
-        y += v_spd;
-    else
-    {
-        while (place_free(x, y + sign(v_spd)))
-        {
-            y += sign(v_spd);
-        }
-    }
-}
-
-// Life and Death
-if (_hp &lt;= 0)
-{
-    instance_destroy();
-}
+            <string>x += h_spd;
+y += v_spd;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_color(c_maroon);
+    draw_line(xprevious, yprevious, x, y);
+draw_set_color(c_white);
 </string>
           </argument>
         </arguments>
