@@ -9,6 +9,15 @@
     <sprite>sprites\sprCultist</sprite>
     <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprite2</sprite>
+    <sprite>sprites\sprHumanSlash</sprite>
+    <sprite>sprites\sprForwardArmSlash</sprite>
+    <sprite>sprites\sprThrust</sprite>
+    <sprite>sprites\hitbox_Thrust</sprite>
+    <sprite>sprites\sprWideCut</sprite>
+    <sprite>sprites\hitbox_WideCut</sprite>
+    <sprite>sprites\sprCut</sprite>
+    <sprite>sprites\hitbox_Cut</sprite>
+    <sprite>sprites\sprStrike</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
