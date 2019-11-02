@@ -30,6 +30,13 @@
     <script>scripts\get_melee_hitbox.gml</script>
     <script>scripts\get_melee_sprite.gml</script>
   </scripts>
+  <objects name="objects">
+    <object>objects\Camera</object>
+    <object>objects\InputManager</object>
+    <object>objects\GameManager</object>
+    <object>objects\Entity</object>
+    <object>objects\Item</object>
+  </objects>
   <help>
     <rtf>help.rtf</rtf>
   </help>
