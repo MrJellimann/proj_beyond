@@ -2,24 +2,24 @@
 <sprite>
   <type>0</type>
   <xorig>23</xorig>
-  <yorigin>5</yorigin>
+  <yorigin>18</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>46</bbox_right>
+  <bbox_right>45</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>10</bbox_bottom>
+  <bbox_bottom>35</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>47</width>
-  <height>11</height>
+  <width>46</width>
+  <height>36</height>
   <frames>
-    <frame index="0">images\hitbox_Thrust_0.png</frame>
+    <frame index="0">images\hitbox_Strike_0.png</frame>
   </frames>
 </sprite>

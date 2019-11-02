@@ -11,16 +11,25 @@
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\sprHumanSlash</sprite>
     <sprite>sprites\sprForwardArmSlash</sprite>
-    <sprite>sprites\sprThrust</sprite>
-    <sprite>sprites\hitbox_Thrust</sprite>
+    <sprite>sprites\sprLargeThrust</sprite>
+    <sprite>sprites\hitbox_LargeThrust</sprite>
     <sprite>sprites\sprWideCut</sprite>
     <sprite>sprites\hitbox_WideCut</sprite>
     <sprite>sprites\sprCut</sprite>
     <sprite>sprites\hitbox_Cut</sprite>
     <sprite>sprites\sprStrike</sprite>
+    <sprite>sprites\hitbox_Strike</sprite>
+    <sprite>sprites\sprThrust</sprite>
+    <sprite>sprites\hitbox_Thrust</sprite>
+    <sprite>sprites\sprPerson</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\ENUMS.gml</script>
+    <script>scripts\get_melee_hitbox.gml</script>
+    <script>scripts\get_melee_sprite.gml</script>
+  </scripts>
   <help>
     <rtf>help.rtf</rtf>
   </help>
