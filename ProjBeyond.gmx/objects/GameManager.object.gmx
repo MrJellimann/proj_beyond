@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>camera = instance_create(room_width/2, room_height/2, Camera);
+input = instance_create(0, 0, InputManager);
 player = instance_create(0, 0, Player);
 
 camera._target = player;
