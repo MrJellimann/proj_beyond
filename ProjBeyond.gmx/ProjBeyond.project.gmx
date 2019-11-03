@@ -25,6 +25,8 @@
     <sprite>sprites\sprBloodSplatter</sprite>
     <sprite>sprites\sprTopBloodSplatter</sprite>
     <sprite>sprites\sprPixel</sprite>
+    <sprite>sprites\sprCircleLight</sprite>
+    <sprite>sprites\sprLantern</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
@@ -44,11 +46,14 @@
     <object>objects\Item</object>
     <object>objects\Player</object>
     <object>objects\MeleeAttack</object>
+    <object>objects\Lighting</object>
     <object>objects\Ground</object>
     <object>objects\BloodSpray</object>
     <object>objects\Cultist</object>
     <object>objects\MeleeWeapon</object>
     <object>objects\RangedWeapon</object>
+    <object>objects\CircleLight</object>
+    <object>objects\Lantern</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Game</room>
