@@ -53,7 +53,8 @@ character_light = false;
             <string>surface_set_target(light_surf);
     // Initial
     draw_clear(c_black);
-    draw_set_blend_mode(bm_subtract);
+    //draw_set_blend_mode(bm_subtract);
+    draw_set_blend_mode(bm_one);
 
     // Light Objects
     with (CircleLight)
@@ -62,7 +63,7 @@ character_light = false;
         draw_sprite_ext(sprCircleLight, 0, x, y,
                         _size + (flicker / 100),
                         _size + (flicker / 100),
-                        0, c_white, _intensity);
+                        0, _color, _intensity);
     }
 
     // Character Light

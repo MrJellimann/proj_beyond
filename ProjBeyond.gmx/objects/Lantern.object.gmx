@@ -28,7 +28,8 @@
             <string>event_inherited();
 
 _size = 0.75;
-_intensity = 0.8;
+_intensity = 0.5;
+_color = c_yellow;
 </string>
           </argument>
         </arguments>
