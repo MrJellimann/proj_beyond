@@ -30,6 +30,7 @@
     <sprite>sprites\sprLantern</sprite>
     <sprite>sprites\sprDirectionalLight</sprite>
     <sprite>sprites\sprPointer</sprite>
+    <sprite>sprites\sprShadowHelper</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
@@ -55,6 +56,7 @@
     <object>objects\Player</object>
     <object>objects\MeleeAttack</object>
     <object>objects\Lighting</object>
+    <object>objects\Light</object>
     <object>objects\Ground</object>
     <object>objects\BloodSpray</object>
     <object>objects\Cultist</object>

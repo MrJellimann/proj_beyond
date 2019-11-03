@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ambient_light = 0.15; // Natural light, based on GM Wolf's example
+            <string>ambient_light = 0.45; // Natural light, based on GM Wolf's example
 character_light = true;
 
 light_surf = surface_create(view_wview, view_hview);

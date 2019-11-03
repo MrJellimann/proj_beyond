@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="4" ename="Entity">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,14 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>camera = instance_create(room_width/2, room_height/2, Camera);
-input = instance_create(0, 0, InputManager);
-ground = instance_create(0, 0, Ground);
-lighting = instance_create(0, 0, Lighting);
-shadow = instance_create(0, 0, Shadow);
-player = instance_create(room_width/2, room_height/2, Player);
-
-camera._target = player;
+            <string>if (instance_exists(GameManager.shadow))
+{
+    surface_set_target(GameManager.shadow.shadow_surf);
+        // Clean surface
+        draw_clear_alpha(c_white, 0);
+        
+        // Basic Shadows
+        var l_dir = point_direction(x, y, other.x, other.y);
+        
+        draw_set_color(c_black);
+            draw_sprite_pos(other.sprite_index, other.image_index,
+                            other.x - (other.sprite_width/2) + lengthdir_x(20, l_dir),
+                            other.y - (other.sprite_height/2) + lengthdir_y(20, l_dir),
+                            
+                            other.x + (other.sprite_width/2) + lengthdir_x(20, l_dir),
+                            other.y - (other.sprite_height/2) + lengthdir_y(20, l_dir),
+                            
+                            other.x + (other.sprite_width/2), other.y + (other.sprite_height/2),
+                            other.x - (other.sprite_width/2), other.y + (other.sprite_height/2),
+                            
+                            0.5);
+        draw_set_color(c_white);
+    surface_reset_target();
+}
 </string>
           </argument>
         </arguments>
