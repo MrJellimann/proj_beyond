@@ -90,6 +90,7 @@ if (instance_exists(GameManager.player))
         b.alarm[0] = sprite_get_number(b.sprite_index);
         b._creator = GameManager.player;
         b._damage = 1;
+        b._knockback = 3;
         b._length = GameManager.player.weapon_length;
         b.image_angle = GameManager.player.look_dir;
     }

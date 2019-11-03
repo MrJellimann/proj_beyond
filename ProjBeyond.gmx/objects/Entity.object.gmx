@@ -35,6 +35,8 @@ spd_amount = spd_max / 4;
 image_speed = 0;
 
 // Combat
+k_v_spd = 0;
+k_h_spd = 0;
 look_dir = 0;
 weapon_length = 20;
 
@@ -77,6 +79,20 @@ if (h_spd != 0)
     }
 }
 
+// Horizontal knockback
+if (k_h_spd != 0)
+{
+    if (place_free(x + k_h_spd, y))
+        x += k_h_spd;
+    else
+    {
+        while (place_free(x + sign(k_h_spd), y))
+        {
+            x += sign(k_h_spd);
+        }
+    }
+}
+
 // Vertical
 if (v_spd != 0)
 {
@@ -90,6 +106,42 @@ if (v_spd != 0)
         }
     }
 }
+
+// Vertical knockback
+if (k_v_spd != 0)
+{
+    if (place_free(x, y + k_v_spd))
+        y += k_v_spd;
+    else
+    {
+        while (place_free(x, y + sign(k_v_spd)))
+        {
+            y += sign(k_v_spd);
+        }
+    }
+}
+
+// Recover from knockback
+if (abs(k_h_spd) &gt; 0.5)
+    k_h_spd *= 0.75;
+else
+    k_h_spd = 0;
+
+if (abs(k_v_spd) &gt; 0.5)
+    k_v_spd *= 0.75;
+else
+    k_v_spd = 0;
+/*
+if (k_h_spd &gt; 0)
+    k_h_spd -= 0.25;
+else if (k_h_spd &lt; 0)
+    k_h_spd += 0.25;
+
+if (k_v_spd &gt; 0)
+    k_v_spd -= 0.25;
+else if (k_v_spd &lt; 0)
+    k_v_spd += 0.25;
+*/
 
 // Life and Death
 if (_hp &lt;= 0)

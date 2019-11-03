@@ -28,6 +28,7 @@
             <string>_creator = noone;
 _length = 0;
 _damage = 0;
+_knockback = 1;
 _type = MeleeType.SWORD;
 sprite_index = get_melee_sprite(_type);
 mask_index = get_melee_hitbox(_type);
@@ -106,6 +107,8 @@ mask_index = get_melee_hitbox(_type);
             <string>if (other.id != _creator &amp;&amp; image_index &gt;= 1 &amp;&amp; image_index &lt; 2)
 {
     other._hp -= _damage;
+    other.k_h_spd = lengthdir_x(_knockback, point_direction(x, y, other.x, other.y));
+    other.k_v_spd = lengthdir_y(_knockback, point_direction(x, y, other.x, other.y));
     
     var bd = random(10) - 20;
     
