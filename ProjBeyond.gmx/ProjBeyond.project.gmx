@@ -24,6 +24,7 @@
     <sprite>sprites\sprPerson</sprite>
     <sprite>sprites\sprBloodSplatter</sprite>
     <sprite>sprites\sprTopBloodSplatter</sprite>
+    <sprite>sprites\sprPixel</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
