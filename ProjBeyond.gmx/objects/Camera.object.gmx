@@ -34,6 +34,7 @@ camera_half_width = camera_width / 2;
 camera_half_height = camera_height / 2;
 
 camera_shake = 0;
+camera_follow_rate = 0.75;
 </string>
           </argument>
         </arguments>
@@ -69,8 +70,8 @@ camera_shake = 0;
         _dir = point_direction(_target.x, _target.y, x, y);
         _dist = distance_to_point(_target.x, _target.y);
         
-        x = _target.x + lengthdir_x(_dist * .75, _dir);
-        y = _target.y + lengthdir_y(_dist * .75, _dir); 
+        x = _target.x + lengthdir_x(_dist * camera_follow_rate, _dir);
+        y = _target.y + lengthdir_y(_dist * camera_follow_rate, _dir); 
     }
 }
 

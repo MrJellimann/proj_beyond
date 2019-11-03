@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>4</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -100,14 +100,19 @@ if (irandom(20) &lt;= 1)
         surface_set_target(GameManager.ground.ground_surf);
             //draw_set_alpha(0.9);
             //draw_sprite(_sprite, irandom(sprite_get_number(_sprite)), x, y);
-            var _scale = random_range(0.5, 0.8);
-            draw_sprite_ext(_sprite, 0,
-                            x + (random(_size) * choose(1, -1)),
-                            y + (random(_size) * choose(1, -1)),
-                            _scale, _scale, irandom(359), c_maroon, 0.9);
+            repeat (irandom_range(1, _size))
+            {
+                var _scale = random_range(0.5, 0.8);
+                draw_sprite_ext(_sprite, 0,
+                                x + (random(_size) * choose(1, -1)),
+                                y + (random(_size) * choose(1, -1)),
+                                _scale, _scale, irandom(359), c_maroon, 0.9);
+            }
             //draw_set_alpha(1);
         surface_reset_target();
     }
+    
+    _size++;
 }
 </string>
           </argument>

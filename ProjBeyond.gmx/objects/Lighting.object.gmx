@@ -25,9 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>light_surf = surface_create(room_width, room_height);
+            <string>ambient_light = 0.15; // Natural light, based on GM Wolf's example
+character_light = true;
 
-character_light = false;
+light_surf = surface_create(view_wview, view_hview);
+
+application_surface_draw_enable(false);
+
+uniform_ambient = shader_get_uniform(shd_multiply, "u_fAmbient");
+sampler_light = shader_get_sampler_index(shd_multiply, "u_sLight");
 </string>
           </argument>
         </arguments>
@@ -50,34 +56,30 @@ character_light = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>surface_set_target(light_surf);
-    // Initial
-    draw_clear(c_black);
-    //draw_set_blend_mode(bm_subtract);
-    draw_set_blend_mode(bm_one);
-
-    // Light Objects
-    with (CircleLight)
-    {
-        var flicker = random(5);
-        draw_sprite_ext(sprCircleLight, 0, x, y,
-                        _size + (flicker / 100),
-                        _size + (flicker / 100),
-                        0, _color, _intensity);
-    }
-
-    // Character Light
-    if (character_light)
-    {
-        if (instance_exists(GameManager.player))
-        {
-            draw_sprite(sprCircleLight, 0, GameManager.player.x, GameManager.player.y);
-        }
-    }
-    
-    // Wrap-up
-    draw_set_blend_mode(bm_normal);
-surface_reset_target();
+            <string>//light_compute();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>light_draw();
 </string>
           </argument>
         </arguments>
@@ -100,9 +102,9 @@ surface_reset_target();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_alpha(0.85);
-    draw_surface(light_surf, 0, 0);
-draw_set_alpha(1);
+            <string>light_compute();
+
+//light_draw();
 </string>
           </argument>
         </arguments>

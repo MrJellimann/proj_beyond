@@ -29,7 +29,7 @@
 input = instance_create(0, 0, InputManager);
 ground = instance_create(0, 0, Ground);
 lighting = instance_create(0, 0, Lighting);
-player = instance_create(0, 0, Player);
+player = instance_create(room_width/2, room_height/2, Player);
 
 camera._target = player;
 </string>

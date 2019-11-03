@@ -24,9 +24,12 @@
     <sprite>sprites\sprPerson</sprite>
     <sprite>sprites\sprBloodSplatter</sprite>
     <sprite>sprites\sprTopBloodSplatter</sprite>
+    <sprite>sprites\sprite21</sprite>
     <sprite>sprites\sprPixel</sprite>
     <sprite>sprites\sprCircleLight</sprite>
     <sprite>sprites\sprLantern</sprite>
+    <sprite>sprites\sprDirectionalLight</sprite>
+    <sprite>sprites\sprPointer</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
@@ -37,7 +40,12 @@
     <script>scripts\ENUMS.gml</script>
     <script>scripts\get_melee_hitbox.gml</script>
     <script>scripts\get_melee_sprite.gml</script>
+    <script>scripts\light_compute.gml</script>
+    <script>scripts\light_draw.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shd_multiply.shader</shader>
+  </shaders>
   <objects name="objects">
     <object>objects\Camera</object>
     <object>objects\InputManager</object>
@@ -53,7 +61,10 @@
     <object>objects\MeleeWeapon</object>
     <object>objects\RangedWeapon</object>
     <object>objects\CircleLight</object>
+    <object>objects\DirectionalLight</object>
     <object>objects\Lantern</object>
+    <object>objects\Pointer</object>
+    <object>objects\Shadow</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Game</room>
