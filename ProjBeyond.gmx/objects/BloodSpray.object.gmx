@@ -54,7 +54,9 @@ h_spd = 0;
             <string>if (instance_exists(GameManager.ground))
 {
     surface_set_target(GameManager.ground.ground_surf);
+        draw_set_alpha(0.8);
         draw_sprite(sprBloodSplatter, irandom(sprite_get_number(sprBloodSplatter)), x, y);
+        draw_set_alpha(1);
     surface_reset_target();
 }
 
@@ -83,6 +85,18 @@ instance_destroy();
             <kind>1</kind>
             <string>x += h_spd;
 y += v_spd;
+
+if (irandom(20) &lt;= 1)
+{
+    if (instance_exists(GameManager.ground))
+    {
+        surface_set_target(GameManager.ground.ground_surf);
+            draw_set_alpha(0.9);
+            draw_sprite(sprBloodSplatter, irandom(sprite_get_number(sprBloodSplatter)), x, y);
+            draw_set_alpha(1);
+        surface_reset_target();
+    }
+}
 </string>
           </argument>
         </arguments>

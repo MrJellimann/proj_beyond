@@ -49,6 +49,23 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
+// Rudimentary wander script
+if (x &lt; 32)
+    x = 32;
+else if (x &gt; room_width - 32)
+    x = room_width - 32;
+
+if (y &lt; 32)
+    y = 32;
+else if (y &gt; room_height - 32)
+    y = room_height - 32;
+
+if (irandom(150) &lt;= 1)
+{
+    v_spd = random_range(-2, 2) * choose(0, 0.5, 1);
+    h_spd = random_range(-2, 2) * choose(0, 0.5, 1);
+}
 </string>
           </argument>
         </arguments>

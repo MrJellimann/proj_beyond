@@ -112,11 +112,11 @@ mask_index = get_melee_hitbox(_type);
     
     var bd = random(10) - 20;
     
-    repeat (irandom_range(5, 10))
+    repeat (irandom_range(9, 22))
     {
-        var b = instance_create(other.x, other.y, BloodSpray);
-        b.direction = point_direction(x, y, other.x, other.y) + bd + 5 - random(10);
-        var s = random_range(2, 4);
+        var b = instance_create(other.x + 3 - random(6), other.y + 3 - random(6), BloodSpray);
+        b.direction = point_direction(x, y, other.x, other.y) + bd + 12 - random(24);
+        var s = random_range(3, 6);
         b.v_spd = lengthdir_y(s, b.direction);
         b.h_spd = lengthdir_x(s, b.direction);
     }
