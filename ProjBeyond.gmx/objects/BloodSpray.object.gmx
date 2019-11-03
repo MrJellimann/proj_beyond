@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0] = 5 + irandom(15);
-_sprite = sprPixel;
+_sprite = sprTopBloodSplatter;
 _size = 1;
 v_spd = 0;
 h_spd = 0;
@@ -59,10 +59,11 @@ h_spd = 0;
         //draw_sprite(_sprite, irandom(sprite_get_number(_sprite)), x, y);
         //draw_set_alpha(1);
         
+        var _scale = random_range(0.5, 0.8);
         draw_sprite_ext(_sprite, 0,
-                x + (random(_size) * choose(1, -1)),
-                y + (random(_size) * choose(1, -1)),
-                1, 1, 0, c_maroon, 0.9);
+                        x + (random(_size) * choose(1, -1)),
+                        y + (random(_size) * choose(1, -1)),
+                        _scale, _scale, irandom(359), c_maroon, 0.9);
     surface_reset_target();
 }
 
@@ -99,10 +100,11 @@ if (irandom(20) &lt;= 1)
         surface_set_target(GameManager.ground.ground_surf);
             //draw_set_alpha(0.9);
             //draw_sprite(_sprite, irandom(sprite_get_number(_sprite)), x, y);
+            var _scale = random_range(0.5, 0.8);
             draw_sprite_ext(_sprite, 0,
                             x + (random(_size) * choose(1, -1)),
                             y + (random(_size) * choose(1, -1)),
-                            1, 1, 0, c_maroon, 0.9);
+                            _scale, _scale, irandom(359), c_maroon, 0.9);
             //draw_set_alpha(1);
         surface_reset_target();
     }
