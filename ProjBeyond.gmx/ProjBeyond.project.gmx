@@ -31,6 +31,7 @@
     <sprite>sprites\sprDirectionalLight</sprite>
     <sprite>sprites\sprPointer</sprite>
     <sprite>sprites\sprShadowHelper</sprite>
+    <sprite>sprites\hitbox_Person</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>

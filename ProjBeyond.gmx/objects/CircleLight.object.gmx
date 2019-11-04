@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>_size = 1;
 _intensity = 1;
+_range = 128;
 </string>
           </argument>
         </arguments>

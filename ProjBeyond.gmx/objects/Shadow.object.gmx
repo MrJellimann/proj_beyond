@@ -31,7 +31,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="1">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,45 +49,45 @@
           <argument>
             <kind>1</kind>
             <string>surface_set_target(shadow_surf);
-    draw_clear_alpha(c_white, 0);
-surface_reset_target();
-/*
-surface_set_target(shadow_surf);
     // Clean surface
     draw_clear_alpha(c_white, 0);
     
     // Basic shadows
     with (Entity)
     {
-        var near_light;
-        near_light = instance_nearest(x, y, CircleLight);
-
-        if (distance_to_object(near_light) &gt; 256)
-            near_light = noone;
-        
-        var l_dir;
-        
-        if (near_light != noone)
-            l_dir = point_direction(x, y, near_light.x, near_light.y) - 180;
-        else
-            l_dir = 180 - 15;
-        
-        //draw_set_color(c_black);
-        draw_sprite_pos(sprite_index, image_index,
-                        x - (sprite_width/2) + lengthdir_x(20, l_dir),
-                        y - (sprite_height/2) + lengthdir_y(20, l_dir),
-                        
-                        x + (sprite_width/2) + lengthdir_x(20, l_dir),
-                        y - (sprite_height/2) + lengthdir_y(20, l_dir),
-                        
-                        x + (sprite_width/2), y + (sprite_height/2),
-                        x - (sprite_width/2), y + (sprite_height/2),
-                        
-                        0.5);
-        draw_set_color(c_white);
+        var counter = 0;
+        repeat (instance_number(Light))
+        {
+            var near_light;
+            // near_light = instance_nearest(x, y, CircleLight);
+            near_light = instance_find(Light, counter++);
+    
+            if (distance_to_object(near_light) &gt; 256)
+                near_light = noone;
+            
+            var l_dir;
+            
+            if (near_light != noone)
+                l_dir = point_direction(x, y, near_light.x, near_light.y) - 180;
+            else
+                l_dir = 180 - 15;
+            
+            draw_set_color(c_black);
+            draw_sprite_pos(sprite_index, image_index,
+                            x - (sprite_width/2) + lengthdir_x(sprite_height/2, l_dir+10),
+                            y - (sprite_height/4*0) + lengthdir_y(sprite_height/2, l_dir+10),
+                            
+                            x + (sprite_width/2) + lengthdir_x(sprite_height/2, l_dir-10),
+                            y - (sprite_height/4*0) + lengthdir_y(sprite_height/2, l_dir-10),
+                            
+                            x + (sprite_width/2)-4, y, // + (sprite_height/2),
+                            x - (sprite_width/2)+4, y, // + (sprite_height/2),
+                            
+                            1 - (distance_to_object(near_light) / 256));
+            draw_set_color(c_white);
+        }
     }
 surface_reset_target();
-*/
 </string>
           </argument>
         </arguments>

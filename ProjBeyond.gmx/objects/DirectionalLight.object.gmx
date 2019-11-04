@@ -28,6 +28,7 @@
             <string>_size = 1;
 _intensity = 1;
 _direction = 0;
+_range = 64;
 </string>
           </argument>
         </arguments>

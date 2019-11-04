@@ -6,7 +6,7 @@
   <depth>5</depth>
   <persistent>0</persistent>
   <parentName>Entity</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>hitbox_Person</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
