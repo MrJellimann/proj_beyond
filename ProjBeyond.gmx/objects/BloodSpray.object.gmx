@@ -30,7 +30,7 @@ _sprite = sprTopBloodSplatter;
 _size = 1;
 v_spd = 0;
 h_spd = 0;
-_color = c_maroon;
+_color = c_red;//c_maroon;
 </string>
           </argument>
         </arguments>

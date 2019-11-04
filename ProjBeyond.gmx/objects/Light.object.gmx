@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>_range = 128;
+_precise = false;
 </string>
           </argument>
         </arguments>

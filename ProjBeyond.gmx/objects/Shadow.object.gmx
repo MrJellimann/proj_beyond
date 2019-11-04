@@ -63,13 +63,27 @@
         {
             var near_light;
             near_light = instance_find(Light, counter++);
-    
-            if (distance_to_object(near_light) &gt; near_light._range)
-                near_light = noone;
-            if (near_light != noone)
+
+            if (!near_light._precise)
             {
-                if (collision_line(x, y, near_light.x, near_light.y, Obstacle, false, true))
+                if (distance_to_object(near_light) &gt; near_light._range)
                     near_light = noone;
+                if (near_light != noone)
+                {
+                    if (collision_line(x, y, near_light.x, near_light.y, Obstacle, false, true))
+                        near_light = noone;
+                }
+            }
+            else
+            {
+                if (!place_meeting(x, y, near_light))
+                    near_light = noone;
+                
+                if (near_light != noone)
+                {
+                    if (collision_line(x, y, near_light.x, near_light.y, Obstacle, false, true))
+                        near_light = noone;
+                }
             }
             
             var l_dir;

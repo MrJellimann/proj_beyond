@@ -32,10 +32,12 @@
     <sprite>sprites\sprPointer</sprite>
     <sprite>sprites\sprShadowHelper</sprite>
     <sprite>sprites\hitbox_Person</sprite>
+    <sprite>sprites\hitbox_DirectionalLight</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
     <background>background\tile_Snow</background>
+    <background>background\tile_MarbleFloor</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

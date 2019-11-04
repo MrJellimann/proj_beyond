@@ -31,6 +31,7 @@ _range = 10000;
 _intensity = 0.2;
 _size = 0;
 _color = c_white;
+_precise = false;
 </string>
           </argument>
         </arguments>

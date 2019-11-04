@@ -29,6 +29,7 @@
 _intensity = 1;
 _direction = 0;
 _range = 64;
+_precise = true;
 </string>
           </argument>
         </arguments>
