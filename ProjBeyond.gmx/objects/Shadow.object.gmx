@@ -59,7 +59,6 @@
         repeat (instance_number(Light))
         {
             var near_light;
-            // near_light = instance_nearest(x, y, CircleLight);
             near_light = instance_find(Light, counter++);
     
             if (distance_to_object(near_light) &gt; near_light._range)
@@ -79,19 +78,22 @@
             
             if (near_light != noone)
             {
+                // Attempts to use blend mode based on direction
+                // Initial problem: shadows only turn white when below character
                 /*if (l_dir &gt; 180 || l_dir &lt;= 359)
                     draw_set_blend_mode(bm_inv_dest_colour);
                 else
                     draw_set_blend_mode(bm_max);
                 */
                 //draw_set_blend_mode_ext(bm_src_alpha_sat, bm_zero);
-                draw_set_blend_mode(bm_add);
+                //draw_set_blend_mode(bm_add);
+                d3d_set_fog(true, c_black, 0, 1);
                 
                 if (l_dir &gt; 180 || l_dir &lt;= 359)
                     draw_set_color(c_white);
                 else
                     draw_set_color(c_black);
-                //draw_set_color(c_black);
+                
                 draw_sprite_pos(sprite_index, image_index,
                                 x - (sprite_width/2) + lengthdir_x(sprite_height/2, l_dir+10),
                                 y - (sprite_height/4*0) + lengthdir_y(sprite_height/2, l_dir+10),
@@ -99,13 +101,15 @@
                                 x + (sprite_width/2) + lengthdir_x(sprite_height/2, l_dir-10),
                                 y - (sprite_height/4*0) + lengthdir_y(sprite_height/2, l_dir-10),
                                 
-                                x + (sprite_width/2)-4, y, // + (sprite_height/2),
-                                x - (sprite_width/2)+4, y, // + (sprite_height/2),
+                                x + (sprite_width/2)-4, y,
+                                x - (sprite_width/2)+4, y,
                                 
-                                // 1 - 
-                                1 - (distance_to_object(near_light) / near_light._range));
+                                0.8 * (1 - (distance_to_object(near_light) / near_light._range)));
+                
+                // Revert settings
                 //draw_set_color(c_white);
-                draw_set_blend_mode(bm_normal);
+                //draw_set_blend_mode(bm_normal);
+                d3d_set_fog(false, c_white, 0, 0);
             }
         }
     }
@@ -132,7 +136,9 @@ surface_reset_target();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_surface(shadow_surf, 0, 0);
+            <string>draw_set_alpha(0.9);
+    draw_surface(shadow_surf, 0, 0);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>
