@@ -65,6 +65,17 @@
     <instance objName="Lantern" x="448" y="192" name="inst_DA4D461F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Lantern" x="512" y="192" name="inst_9C5D9446" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Lantern" x="576" y="192" name="inst_BF4F49B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="384" y="256" name="inst_D74968A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="576" y="320" name="inst_56C5ACEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="320" y="384" name="inst_65EF17C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="640" y="448" name="inst_5C4B7E01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="512" y="576" name="inst_C8B8A088" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="640" y="320" name="inst_DE53CB06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="768" y="192" name="inst_0B80E2DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="512" y="64" name="inst_1DB202E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="832" y="448" name="inst_2476DAB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="192" y="192" name="inst_2089B538" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="192" y="384" name="inst_228038AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tile_Dirt" x="0" y="512" w="64" h="64" xo="0" yo="0" id="10000017" name="inst_13FF2918" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

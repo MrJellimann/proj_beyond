@@ -31,52 +31,6 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="Entity">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if (instance_exists(GameManager.shadow))
-{
-    surface_set_target(GameManager.shadow.shadow_surf);
-        // Clean surface
-        draw_clear_alpha(c_white, 0);
-        
-        // Basic Shadows
-        var l_dir = point_direction(x, y, other.x, other.y);
-        
-        draw_set_color(c_black);
-            draw_sprite_pos(other.sprite_index, other.image_index,
-                            other.x - (other.sprite_width/2) + lengthdir_x(20, l_dir),
-                            other.y - (other.sprite_height/2) + lengthdir_y(20, l_dir),
-                            
-                            other.x + (other.sprite_width/2) + lengthdir_x(20, l_dir),
-                            other.y - (other.sprite_height/2) + lengthdir_y(20, l_dir),
-                            
-                            other.x + (other.sprite_width/2), other.y + (other.sprite_height/2),
-                            other.x - (other.sprite_width/2), other.y + (other.sprite_height/2),
-                            
-                            0.5);
-        draw_set_color(c_white);
-    surface_reset_target();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>

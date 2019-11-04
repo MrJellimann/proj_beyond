@@ -114,8 +114,9 @@ mask_index = get_melee_hitbox(_type);
     
     repeat (irandom_range(9, 22))
     {
+        var _dir = image_angle; // point_direction(x, y, other.x, other.y);
         var b = instance_create(other.x + 3 - random(6), other.y + 3 - random(6), BloodSpray);
-        b.direction = point_direction(x, y, other.x, other.y) + bd + 12 - random(24);
+        b.direction = _dir + bd + 12 - random(24);
         var s = random_range(0, 6);
         b.v_spd = lengthdir_y(s, b.direction);
         b.h_spd = lengthdir_x(s, b.direction);

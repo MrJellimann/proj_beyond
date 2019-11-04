@@ -62,8 +62,13 @@
             // near_light = instance_nearest(x, y, CircleLight);
             near_light = instance_find(Light, counter++);
     
-            if (distance_to_object(near_light) &gt; 256)
+            if (distance_to_object(near_light) &gt; near_light._range)
                 near_light = noone;
+            if (near_light != noone)
+            {
+                if (collision_line(x, y, near_light.x, near_light.y, Obstacle, false, true))
+                    near_light = noone;
+            }
             
             var l_dir;
             
@@ -72,19 +77,36 @@
             else
                 l_dir = 180 - 15;
             
-            draw_set_color(c_black);
-            draw_sprite_pos(sprite_index, image_index,
-                            x - (sprite_width/2) + lengthdir_x(sprite_height/2, l_dir+10),
-                            y - (sprite_height/4*0) + lengthdir_y(sprite_height/2, l_dir+10),
-                            
-                            x + (sprite_width/2) + lengthdir_x(sprite_height/2, l_dir-10),
-                            y - (sprite_height/4*0) + lengthdir_y(sprite_height/2, l_dir-10),
-                            
-                            x + (sprite_width/2)-4, y, // + (sprite_height/2),
-                            x - (sprite_width/2)+4, y, // + (sprite_height/2),
-                            
-                            1 - (distance_to_object(near_light) / 256));
-            draw_set_color(c_white);
+            if (near_light != noone)
+            {
+                /*if (l_dir &gt; 180 || l_dir &lt;= 359)
+                    draw_set_blend_mode(bm_inv_dest_colour);
+                else
+                    draw_set_blend_mode(bm_max);
+                */
+                //draw_set_blend_mode_ext(bm_src_alpha_sat, bm_zero);
+                draw_set_blend_mode(bm_add);
+                
+                if (l_dir &gt; 180 || l_dir &lt;= 359)
+                    draw_set_color(c_white);
+                else
+                    draw_set_color(c_black);
+                //draw_set_color(c_black);
+                draw_sprite_pos(sprite_index, image_index,
+                                x - (sprite_width/2) + lengthdir_x(sprite_height/2, l_dir+10),
+                                y - (sprite_height/4*0) + lengthdir_y(sprite_height/2, l_dir+10),
+                                
+                                x + (sprite_width/2) + lengthdir_x(sprite_height/2, l_dir-10),
+                                y - (sprite_height/4*0) + lengthdir_y(sprite_height/2, l_dir-10),
+                                
+                                x + (sprite_width/2)-4, y, // + (sprite_height/2),
+                                x - (sprite_width/2)+4, y, // + (sprite_height/2),
+                                
+                                // 1 - 
+                                1 - (distance_to_object(near_light) / near_light._range));
+                //draw_set_color(c_white);
+                draw_set_blend_mode(bm_normal);
+            }
         }
     }
 surface_reset_target();
