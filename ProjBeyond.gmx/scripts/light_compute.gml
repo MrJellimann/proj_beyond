@@ -1,6 +1,10 @@
 surface_set_target(light_surf);
     // Initial
-    draw_clear_alpha(c_black, 1);
+    if (instance_exists(GameManager.sun))
+        draw_clear_alpha(c_black, 1 - GameManager.sun._intensity);
+    else
+        draw_clear_alpha(c_black, 1);
+    
     draw_set_blend_mode_ext(bm_src_alpha, bm_one);
 
     // Light Objects

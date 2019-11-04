@@ -1,5 +1,5 @@
 shader_set(shd_multiply);
-shader_set_uniform_f(uniform_ambient, 0.05);
+shader_set_uniform_f(uniform_ambient, ambient_light);
 texture_set_stage(sampler_light, surface_get_texture(light_surf));
 
 //draw_set_alpha(0.95);

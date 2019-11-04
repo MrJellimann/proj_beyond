@@ -30,6 +30,7 @@ _sprite = sprTopBloodSplatter;
 _size = 1;
 v_spd = 0;
 h_spd = 0;
+_color = c_maroon;
 </string>
           </argument>
         </arguments>
@@ -63,7 +64,7 @@ h_spd = 0;
         draw_sprite_ext(_sprite, 0,
                         x + (random(_size) * choose(1, -1)),
                         y + (random(_size) * choose(1, -1)),
-                        _scale, _scale, irandom(359), c_maroon, 0.9);
+                        _scale, _scale, irandom(359), _color, 0.9);
     surface_reset_target();
 }
 
@@ -106,7 +107,7 @@ if (irandom(20) &lt;= 1)
                 draw_sprite_ext(_sprite, 0,
                                 x + (random(_size) * choose(1, -1)),
                                 y + (random(_size) * choose(1, -1)),
-                                _scale, _scale, irandom(359), c_maroon, 0.9);
+                                _scale, _scale, irandom(359), _color, 0.9);
             }
             //draw_set_alpha(1);
         surface_reset_target();
@@ -136,7 +137,7 @@ if (irandom(20) &lt;= 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_maroon);
+            <string>draw_set_color(_color);
     draw_line(xprevious, yprevious, x, y);
 draw_set_color(c_white);
 </string>

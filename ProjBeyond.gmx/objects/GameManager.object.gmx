@@ -30,9 +30,13 @@ input = instance_create(0, 0, InputManager);
 ground = instance_create(0, 0, Ground);
 lighting = instance_create(0, 0, Lighting);
 shadow = instance_create(0, 0, Shadow);
+sun = instance_create(-100, -1000, CelestialLight);
 player = instance_create(room_width/2, room_height/2, Player);
 
 camera._target = player;
+
+sun._color = c_aqua;
+sun._intensity = 0.1;
 </string>
           </argument>
         </arguments>

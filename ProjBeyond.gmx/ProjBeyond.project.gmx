@@ -69,6 +69,7 @@
     <object>objects\Pointer</object>
     <object>objects\Shadow</object>
     <object>objects\Obstacle</object>
+    <object>objects\CelestialLight</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Game</room>
