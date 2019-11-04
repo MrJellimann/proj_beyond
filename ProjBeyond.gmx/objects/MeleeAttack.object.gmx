@@ -28,7 +28,7 @@
             <string>_creator = noone;
 _length = 0;
 _damage = 0;
-_knockback = 1;
+_knockback = 6;
 _type = MeleeType.SWORD;
 sprite_index = get_melee_sprite(_type);
 mask_index = get_melee_hitbox(_type);

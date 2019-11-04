@@ -7,7 +7,8 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprCultist</sprite>
-    <sprite>sprites\sprPlayer</sprite>
+    <sprite>sprites\sprButtondownHuman</sprite>
+    <sprite>sprites\sprLoinclothHuman</sprite>
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\sprHumanSlash</sprite>
     <sprite>sprites\sprForwardArmSlash</sprite>
@@ -33,11 +34,13 @@
     <sprite>sprites\sprShadowHelper</sprite>
     <sprite>sprites\hitbox_Person</sprite>
     <sprite>sprites\hitbox_DirectionalLight</sprite>
+    <sprite>sprites\sprBullet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
     <background>background\tile_Snow</background>
     <background>background\tile_MarbleFloor</background>
+    <background>background\tile_MarbleFloor2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -72,6 +75,7 @@
     <object>objects\Shadow</object>
     <object>objects\Obstacle</object>
     <object>objects\CelestialLight</object>
+    <object>objects\Projectile</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Game</room>

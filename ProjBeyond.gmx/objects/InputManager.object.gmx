@@ -81,6 +81,23 @@ if (instance_exists(GameManager.player))
     GameManager.player.look_dir = point_direction(GameManager.player.x, GameManager.player.y, mouse_x, mouse_y);
     
     if (m_left)
+    // Ranged attack
+    {
+        var b = instance_create(    GameManager.player.x + lengthdir_x(GameManager.player.weapon_length, GameManager.player.look_dir),
+                                    GameManager.player.y + lengthdir_y(GameManager.player.weapon_length, GameManager.player.look_dir),
+                                    Projectile);
+        
+        b._creator = GameManager.player;
+        b._damage = 2;
+        b._knockback = 4;
+        b._length = GameManager.player.weapon_length;
+        b.direction = GameManager.player.look_dir + 5 - random(10);
+        b.image_angle = b.direction;
+        b.speed = 14;
+    }
+    
+    // Melee attack
+    /*
     {
         var b = instance_create(    GameManager.player.x + lengthdir_x(GameManager.player.weapon_length, GameManager.player.look_dir),
                                     GameManager.player.y + lengthdir_y(GameManager.player.weapon_length, GameManager.player.look_dir),
@@ -94,6 +111,7 @@ if (instance_exists(GameManager.player))
         b._length = GameManager.player.weapon_length;
         b.image_angle = GameManager.player.look_dir;
     }
+    */
     
     //===== Testing =====//
 }

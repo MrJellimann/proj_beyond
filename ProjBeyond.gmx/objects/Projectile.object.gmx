@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,24 +25,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_target = noone;
+            <string>_creator = noone;
+_range = 100;
+_damage = 1;
+_knockback = 3;
+image_angle = direction;
+_drift = 0;
+_slowdown = 0;
+_type = 0;
+sprite_index = sprBullet;
+mask_index = sprBullet;
 
-respect_mouse = true;
-
-camera_width = view_wview;
-camera_height = view_hview;
-
-camera_half_width = camera_width / 2;
-camera_half_height = camera_height / 2;
-
-camera_shake = 0;
-camera_follow_rate = 0.75;
+_size = 0.085;
+_intensity = 0.9;
+_precise = false;
+_color = c_white;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -59,45 +62,63 @@ camera_follow_rate = 0.75;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(_target))
+            <string>_range--;
+image_angle = direction;
+
+if (_drift != 0)
 {
-    if (distance_to_point(_target.x, _target.y) &lt; 1)
-    {
-        x = _target.x;
-        y = _target.y;
-    }
-    else
-    {
-        var _dir, _dist;
-        _dir = point_direction(_target.x, _target.y, x, y);
-        _dist = distance_to_point(_target.x, _target.y);
-        
-        x = _target.x + lengthdir_x(_dist * camera_follow_rate, _dir);
-        y = _target.y + lengthdir_y(_dist * camera_follow_rate, _dir); 
-    }
+    direction += choose(1, -1) * _drift;
 }
 
-if (respect_mouse)
+if (_slowdown != 0)
 {
-    var _dist, _dir;
-    
-    if (_target != noone)
-        _dir = point_direction(_target.x, _target.y, mouse_x, mouse_y);
-    else
-        _dir = point_direction(x, y, mouse_x, mouse_y);
-    
-    _dist = distance_to_point(mouse_x, mouse_y);
-    
-    x += lengthdir_x(_dist/10, _dir);
-    y += lengthdir_y(_dist/10, _dir);
+    speed *= _slowdown;
 }
 
-if (camera_shake &gt; 0)
-    camera_shake -= 0.1;
-
-view_xview = x - camera_half_width;
-view_yview = y - camera_half_height;
-view_angle = choose(1, -1) * camera_shake;
+if (_range &lt;= 0)
+    instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="Entity">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (other.id != _creator)
+{
+    other._hp -= _damage;
+    other.k_h_spd = lengthdir_x(_knockback, point_direction(x, y, other.x, other.y));
+    other.k_v_spd = lengthdir_y(_knockback, point_direction(x, y, other.x, other.y));
+    
+    var bd = random(10) - 20;
+    
+    repeat (irandom_range(16, 30))
+    {
+        var _dir = image_angle; // point_direction(x, y, other.x, other.y);
+        var b = instance_create(other.x + 3 - random(6), other.y + 3 - random(6), BloodSpray);
+        b.direction = _dir + choose(180, 0) + bd + 16 - random(32);
+        var s = random_range(0, 8);
+        b.v_spd = lengthdir_y(s, b.direction);
+        b.h_spd = lengthdir_x(s, b.direction);
+    }
+    
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

@@ -25,6 +25,16 @@ surface_set_target(light_surf);
                         _size,// + (flicker / 100),
                         _direction, _color, _intensity * (1 - flicker));
     }
+    
+    with (Projectile)
+    {
+        // TODO: show projectile through all darkness
+    }
+    
+    with (MeleeAttack)
+    {
+        // TODO: show melee attack through all darkness
+    }
 
     // Character Light
     if (character_light)
