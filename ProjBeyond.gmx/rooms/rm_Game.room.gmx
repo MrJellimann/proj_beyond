@@ -85,6 +85,25 @@
     <instance objName="Pointer" x="128" y="512" name="inst_9288880A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Pointer" x="704" y="640" name="inst_336E2FB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Pointer" x="896" y="512" name="inst_5DC2A809" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="384" y="576" name="inst_2770D77D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="192" y="448" name="inst_29F57C83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="320" y="704" name="inst_C96437A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="256" y="448" name="inst_A8C16E7D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="512" y="640" name="inst_1E790397" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="640" y="576" name="inst_D941A080" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="768" y="576" name="inst_E5FB3FDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="384" y="320" name="inst_C1BD5070" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="512" y="384" name="inst_FF75A672" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="448" y="64" name="inst_4BBE3E7D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="256" y="192" name="inst_74AFD4D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="64" y="128" name="inst_01811006" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="64" y="320" name="inst_A405E947" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="64" y="576" name="inst_31355636" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="192" y="704" name="inst_0AD9A00A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="640" y="704" name="inst_119F58F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="896" y="320" name="inst_45C7D05D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="640" y="192" name="inst_94F7DB04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Cultist" x="704" y="64" name="inst_95FA4E97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tile_MarbleFloor2" x="0" y="0" w="64" h="64" xo="0" yo="0" id="10000602" name="inst_FE6C7D49" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
