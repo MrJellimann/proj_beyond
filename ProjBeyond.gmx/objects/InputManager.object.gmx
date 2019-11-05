@@ -59,11 +59,11 @@ m_right = 0;
     GameManager.player.look_dir = point_direction(GameManager.player.x, GameManager.player.y, mouse_x, mouse_y);
     
     if (m_left)
-    /*
+    ///*
     // Ranged attack
     {
         var b = instance_create(    GameManager.player.x + lengthdir_x(GameManager.player.weapon_length, GameManager.player.look_dir),
-                                    GameManager.player.y + lengthdir_y(GameManager.player.weapon_length, GameManager.player.look_dir),
+                                    GameManager.player.y - 16 + lengthdir_y(GameManager.player.weapon_length, GameManager.player.look_dir),
                                     Projectile);
         
         b._creator = GameManager.player;
@@ -77,10 +77,10 @@ m_right = 0;
     }
     //*/
     // Melee attack
-    ///*
+    /*
     {
         var b = instance_create(    GameManager.player.x + lengthdir_x(GameManager.player.weapon_length, GameManager.player.look_dir),
-                                    GameManager.player.y + lengthdir_y(GameManager.player.weapon_length, GameManager.player.look_dir),
+                                    GameManager.player.y - 16 + lengthdir_y(GameManager.player.weapon_length, GameManager.player.look_dir),
                                     MeleeAttack);
         // Here is where the weapon type affects the melee attack
         

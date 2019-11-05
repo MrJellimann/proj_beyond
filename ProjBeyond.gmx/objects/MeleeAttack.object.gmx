@@ -90,7 +90,7 @@ _range = 1;
             <string>if (instance_exists(_creator))
 {
     x = _creator.x + lengthdir_x(_length, image_angle);
-    y = _creator.y + lengthdir_y(_length, image_angle);
+    y = _creator.y - 16 + lengthdir_y(_length, image_angle);
 }
 
 _direction = image_angle;

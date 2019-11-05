@@ -111,7 +111,9 @@
                 else
                     draw_set_color(c_black);
                 
-                draw_sprite_pos(sprite_index, image_index,
+                if (_leg_sprite == _torso_sprite)
+                {
+                    draw_sprite_pos(sprite_index, image_index,
                                 x - (sprite_width/2) + lengthdir_x(sprite_height/2, l_dir+10),
                                 y - (sprite_height/4*0) + lengthdir_y(sprite_height/2, l_dir+10),
                                 
@@ -122,6 +124,38 @@
                                 x - (sprite_width/2)+4, y,
                                 
                                 0.8 * (1 - (distance_to_object(near_light) / near_light._range)));
+                }
+                else
+                {
+                    var sp_w, sp_h;
+                    sp_w = sprite_get_width(_leg_sprite);
+                    sp_h = sprite_get_height(_leg_sprite);
+                    draw_sprite_pos(_leg_sprite, _leg_index,
+                                x - (sp_w/2) + lengthdir_x(sp_h/2, l_dir+10),
+                                y - (sp_h/4*0) + lengthdir_y(sp_h/2, l_dir+10),
+                                
+                                x + (sp_w/2) + lengthdir_x(sp_h/2, l_dir-10),
+                                y - (sp_h/4*0) + lengthdir_y(sp_h/2, l_dir-10),
+                                
+                                x + (sp_w/2)-4, y,
+                                x - (sp_w/2)+4, y,
+                                
+                                0.8 * (1 - (distance_to_object(near_light) / near_light._range)));
+                    
+                    sp_w = sprite_get_width(_torso_sprite);
+                    sp_h = sprite_get_height(_torso_sprite);
+                    draw_sprite_pos(_torso_sprite, 0,
+                                x - (sp_w/2) + lengthdir_x(sp_h/2, l_dir+10),
+                                y - (sp_h/4*0) + lengthdir_y(sp_h/2, l_dir+10),
+                                
+                                x + (sp_w/2) + lengthdir_x(sp_h/2, l_dir-10),
+                                y - (sp_h/4*0) + lengthdir_y(sp_h/2, l_dir-10),
+                                
+                                x + (sp_w/2)-4, y,
+                                x - (sp_w/2)+4, y,
+                                
+                                0.8 * (1 - (distance_to_object(near_light) / near_light._range)));
+                }
                 
                 // Revert settings
                 //draw_set_color(c_white);

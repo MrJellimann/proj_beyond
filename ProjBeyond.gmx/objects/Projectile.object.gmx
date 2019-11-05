@@ -43,7 +43,7 @@ _precise = false;
 _color = c_white;
 _light_sprite = sprite_index;
 _direction = image_angle;
-_range = 4;
+_light_index = 0;
 </string>
           </argument>
         </arguments>

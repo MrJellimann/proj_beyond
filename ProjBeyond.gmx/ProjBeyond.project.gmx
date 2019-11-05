@@ -34,7 +34,10 @@
     <sprite>sprites\hitbox_Person</sprite>
     <sprite>sprites\hitbox_DirectionalLight</sprite>
     <sprite>sprites\sprBullet</sprite>
-    <sprite>sprites\sprite29</sprite>
+    <sprite>sprites\sprWalkingLeg</sprite>
+    <sprite>sprites\sprWalkingLegs</sprite>
+    <sprite>sprites\sprTorso</sprite>
+    <sprite>sprites\sprGun</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
