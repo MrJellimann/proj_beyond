@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>Light</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -36,10 +36,14 @@ _type = 0;
 sprite_index = sprBullet;
 mask_index = sprBullet;
 
-_size = 0.085;
+// Light settings
+_size = 1.05;
 _intensity = 0.9;
 _precise = false;
 _color = c_white;
+_light_sprite = sprite_index;
+_direction = image_angle;
+_range = 4;
 </string>
           </argument>
         </arguments>
@@ -64,6 +68,7 @@ _color = c_white;
             <kind>1</kind>
             <string>_range--;
 image_angle = direction;
+_direction = image_angle;
 
 if (_drift != 0)
 {

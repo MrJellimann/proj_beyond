@@ -25,10 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_size = 1;
+            <string>event_inherited();
+
+_size = 1;
 _intensity = 1;
 _range = 128;
 _precise = false;
+_light_sprite = sprCircleLight;
 </string>
           </argument>
         </arguments>

@@ -27,6 +27,12 @@
             <kind>1</kind>
             <string>_range = 128;
 _precise = false;
+_light_sprite = sprCircleLight;
+_light_index = 0;
+_direction = 0;
+_intensity = 1;
+_size = 1;
+_color = c_white;
 </string>
           </argument>
         </arguments>

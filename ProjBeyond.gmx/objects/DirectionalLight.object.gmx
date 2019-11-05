@@ -25,11 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_size = 1;
+            <string>event_inherited();
+
+_size = 1;
 _intensity = 1;
 _direction = 0;
 _range = 256;
 _precise = true;
+_light_sprite = sprDirectionalLight;
 </string>
           </argument>
         </arguments>

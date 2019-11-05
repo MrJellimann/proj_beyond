@@ -25,7 +25,6 @@
     <sprite>sprites\sprPerson</sprite>
     <sprite>sprites\sprBloodSplatter</sprite>
     <sprite>sprites\sprTopBloodSplatter</sprite>
-    <sprite>sprites\sprite21</sprite>
     <sprite>sprites\sprPixel</sprite>
     <sprite>sprites\sprCircleLight</sprite>
     <sprite>sprites\sprLantern</sprite>
@@ -35,12 +34,14 @@
     <sprite>sprites\hitbox_Person</sprite>
     <sprite>sprites\hitbox_DirectionalLight</sprite>
     <sprite>sprites\sprBullet</sprite>
+    <sprite>sprites\sprite29</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
     <background>background\tile_Snow</background>
     <background>background\tile_MarbleFloor</background>
     <background>background\tile_MarbleFloor2</background>
+    <background>background\background4</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

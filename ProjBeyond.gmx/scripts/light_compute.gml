@@ -8,15 +8,16 @@ surface_set_target(light_surf);
     draw_set_blend_mode_ext(bm_src_alpha, bm_one);
 
     // Light Objects
-    with (CircleLight)
+    with (Light)
     {
         var flicker = random(5);
-        draw_sprite_ext(sprCircleLight, 0, x - view_xview, y - view_yview,
+        draw_sprite_ext(_light_sprite, _light_index, x - view_xview, y - view_yview,
                         _size + (flicker / 100),
                         _size + (flicker / 100),
-                        0, _color, _intensity);
+                        _direction, _color, _intensity);
     }
     
+    /*
     with (DirectionalLight)
     {
         var flicker = random(0.1);
@@ -25,16 +26,7 @@ surface_set_target(light_surf);
                         _size,// + (flicker / 100),
                         _direction, _color, _intensity * (1 - flicker));
     }
-    
-    with (Projectile)
-    {
-        // TODO: show projectile through all darkness
-    }
-    
-    with (MeleeAttack)
-    {
-        // TODO: show melee attack through all darkness
-    }
+    */
 
     // Character Light
     if (character_light)

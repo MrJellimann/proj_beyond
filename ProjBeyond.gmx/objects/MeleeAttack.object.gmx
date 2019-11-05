@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>Light</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -32,6 +32,16 @@ _knockback = 6;
 _type = MeleeType.SWORD;
 sprite_index = get_melee_sprite(_type);
 mask_index = get_melee_hitbox(_type);
+
+// Light settings
+_size = 1.05;
+_intensity = 0.9;
+_precise = false;
+_color = c_white;
+_light_sprite = sprite_index;
+_light_index = image_index;
+_direction = image_angle;
+_range = 1;
 </string>
           </argument>
         </arguments>
@@ -82,6 +92,9 @@ mask_index = get_melee_hitbox(_type);
     x = _creator.x + lengthdir_x(_length, image_angle);
     y = _creator.y + lengthdir_y(_length, image_angle);
 }
+
+_direction = image_angle;
+_light_index = image_index;
 </string>
           </argument>
         </arguments>
