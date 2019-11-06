@@ -38,6 +38,7 @@
     <sprite>sprites\sprWalkingLegs</sprite>
     <sprite>sprites\sprTorso</sprite>
     <sprite>sprites\sprGun</sprite>
+    <sprite>sprites\sprShadow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
