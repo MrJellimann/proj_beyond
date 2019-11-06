@@ -56,14 +56,14 @@ m_right = 0;
             <string>if (instance_exists(GameManager.player))
 {
     //===== Combat =====//
-    GameManager.player.look_dir = point_direction(GameManager.player.x, GameManager.player.y, mouse_x, mouse_y);
+    GameManager.player.look_dir = point_direction(GameManager.player.x, GameManager.player.y - GameManager.player._center_offset, mouse_x, mouse_y);
     
     if (m_left &amp;&amp; GameManager.player.can_shoot &lt;= 0)
     ///*
     // Ranged attack
     {
         var b = instance_create(    GameManager.player.x + lengthdir_x(GameManager.player.weapon_length, GameManager.player.look_dir),
-                                    GameManager.player.y - 16 + lengthdir_y(GameManager.player.weapon_length, GameManager.player.look_dir),
+                                    GameManager.player.y - GameManager.player._center_offset + lengthdir_y(GameManager.player.weapon_length, GameManager.player.look_dir),
                                     Projectile);
         
         b._creator = GameManager.player;
@@ -75,7 +75,7 @@ m_right = 0;
         b._direction = b.image_angle;
         b.speed = 14;
         
-        var f = instance_create(GameManager.player.x, GameManager.player.y - 16, MuzzleFlash);
+        var f = instance_create(GameManager.player.x, GameManager.player.y - GameManager.player._center_offset, MuzzleFlash);
         f._direction = b._direction;
         
         GameManager.player.can_shoot = 8;
@@ -85,7 +85,7 @@ m_right = 0;
     /*
     {
         var b = instance_create(    GameManager.player.x + lengthdir_x(GameManager.player.weapon_length, GameManager.player.look_dir),
-                                    GameManager.player.y - 16 + lengthdir_y(GameManager.player.weapon_length, GameManager.player.look_dir),
+                                    GameManager.player.y - GameManager.player._center_offset + lengthdir_y(GameManager.player.weapon_length, GameManager.player.look_dir),
                                     MeleeAttack);
         // Here is where the weapon type affects the melee attack
         

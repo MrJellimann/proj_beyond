@@ -129,7 +129,7 @@
                                 x + (sprite_width/2)-4, y,
                                 x - (sprite_width/2)+4, y,
                                 
-                                0.8 * (1 - (distance_to_object(near_light) / near_light._range)));
+                                0.8 * near_light._intensity * (1 - (distance_to_object(near_light) / near_light._range)));
                 }
                 else
                 {

@@ -35,8 +35,8 @@ surface_set_target(light_surf);
         {
             draw_sprite_ext(sprCircleLight, 0,
                         GameManager.player.x - view_xview,
-                        GameManager.player.y - view_yview,
-                        0.5, 0.5, 0, c_white, 0.5);
+                        GameManager.player.y - 16 - view_yview,
+                        0.35, 0.35, 0, c_white, 0.25);
         }
     }
     

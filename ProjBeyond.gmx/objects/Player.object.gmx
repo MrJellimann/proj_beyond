@@ -30,6 +30,7 @@
 _leg_sprite = sprWalkingLegs;
 _torso_sprite = sprTorso;
 _leg_index = 0;
+_center_offset = 20;
 </string>
           </argument>
         </arguments>
@@ -90,9 +91,9 @@ draw_sprite(_torso_sprite, 0, x, y);
 
 // Gun
 if (look_dir &lt; 90 || look_dir &gt;= 270)
-    draw_sprite_ext(sprGun, 0, x, y - 16, 1, 1, look_dir, c_white, 1);
+    draw_sprite_ext(sprGun, 0, x, y - _center_offset, 1, 1, look_dir, c_white, 1);
 else
-    draw_sprite_ext(sprGun, 1, x, y - 16, 1, 1, look_dir, c_white, 1);
+    draw_sprite_ext(sprGun, 1, x, y - _center_offset, 1, 1, look_dir, c_white, 1);
 </string>
           </argument>
         </arguments>

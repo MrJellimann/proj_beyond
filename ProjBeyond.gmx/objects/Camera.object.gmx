@@ -64,16 +64,16 @@ camera_follow_rate = 0.75;
     if (distance_to_point(_target.x, _target.y) &lt; 1)
     {
         x = _target.x;
-        y = _target.y;
+        y = _target.y - _target._center_offset;
     }
     else
     {
         var _dir, _dist;
-        _dir = point_direction(_target.x, _target.y, x, y);
-        _dist = distance_to_point(_target.x, _target.y);
+        _dir = point_direction(_target.x, _target.y - _target._center_offset, x, y);
+        _dist = distance_to_point(_target.x, _target.y - _target._center_offset);
         
         x = _target.x + lengthdir_x(_dist * camera_follow_rate, _dir);
-        y = _target.y + lengthdir_y(_dist * camera_follow_rate, _dir); 
+        y = _target.y - _target._center_offset + lengthdir_y(_dist * camera_follow_rate, _dir); 
     }
 }
 
@@ -82,7 +82,7 @@ if (respect_mouse)
     var _dist, _dir;
     
     if (_target != noone)
-        _dir = point_direction(_target.x, _target.y, mouse_x, mouse_y);
+        _dir = point_direction(_target.x, _target.y - _target._center_offset, mouse_x, mouse_y);
     else
         _dir = point_direction(x, y, mouse_x, mouse_y);
     

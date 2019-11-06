@@ -27,10 +27,10 @@
             <kind>1</kind>
             <string>event_inherited();
 
-_size = random_range(0.5, 1.25);
-_intensity = random_range(0.5, 0.9);
+_size = random_range(0.8, 0.9);
+_intensity = random_range(0.5, 0.6);
 //_color = choose(c_yellow, c_red, c_blue, c_purple, c_green, c_white);
-_color = c_dkgray;
+_color = c_ltgray;
 _range = 128 * _size;
 _direction = 0;
 </string>

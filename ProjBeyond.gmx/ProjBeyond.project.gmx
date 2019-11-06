@@ -78,7 +78,10 @@
     <object>objects\CircleLight</object>
     <object>objects\DirectionalLight</object>
     <object>objects\Lantern</object>
+    <object>objects\Portal</object>
     <object>objects\Pointer</object>
+    <object>objects\Follower</object>
+    <object>objects\Spinner</object>
     <object>objects\Shadow</object>
     <object>objects\Obstacle</object>
     <object>objects\CelestialLight</object>
@@ -86,6 +89,7 @@
     <object>objects\MuzzleFlash</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Tutorial</room>
     <room>rooms\rm_Game</room>
   </rooms>
   <help>

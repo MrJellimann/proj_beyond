@@ -48,6 +48,9 @@ can_shoot = 0;
 // Stats
 max_hp = 10;
 _hp = max_hp;
+
+// Other
+_center_offset = 20;
 </string>
           </argument>
         </arguments>
