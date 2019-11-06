@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 
-_leg_sprite = sprWalkingLegs;
+_leg_sprite_left = sprWalkingLegsLeft;
+_leg_sprite_right = sprWalkingLegsRight;
 _torso_sprite = sprTorso;
 _leg_index = 0;
 _center_offset = 20;
@@ -57,7 +58,13 @@ _center_offset = 20;
 
 if (h_spd != 0 || v_spd != 0)
 {
-    if (_leg_index &gt;= sprite_get_number(_leg_sprite)-1)
+    var num;
+    if (_facing == 'r')
+        num = sprite_get_number(_leg_sprite_right);
+    else
+        num = sprite_get_number(_leg_sprite_left);
+    
+    if (_leg_index &gt;= num-1)
         _leg_index = 1;
     else
         _leg_index += 0.25;
@@ -86,14 +93,22 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(_leg_sprite, _leg_index, x, y);
-draw_sprite(_torso_sprite, 0, x, y);
-
-// Gun
-if (look_dir &lt; 90 || look_dir &gt;= 270)
+            <string>// Facing Right
+if (_facing == 'r')
+{
+    draw_sprite(sprLeftArm, 0, x, y);
+    draw_sprite(_leg_sprite_right, _leg_index, x, y);
+    draw_sprite(_torso_sprite, 0, x, y);
     draw_sprite_ext(sprGun, 0, x, y - _center_offset, 1, 1, look_dir, c_white, 1);
+}
+// Facing Left
 else
+{
     draw_sprite_ext(sprGun, 1, x, y - _center_offset, 1, 1, look_dir, c_white, 1);
+    draw_sprite(_leg_sprite_left, _leg_index, x, y);
+    draw_sprite(_torso_sprite, 1, x, y);
+    draw_sprite(sprLeftArm, 1, x, y);
+}
 </string>
           </argument>
         </arguments>

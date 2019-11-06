@@ -33,7 +33,9 @@ spd_amount = spd_max / 4;
 
 // Animations
 image_speed = 0;
-_leg_sprite = sprite_index;
+_facing = 'r';
+_leg_sprite_left = sprite_index;
+_leg_sprite_right = sprite_index;
 _torso_sprite = sprite_index;
 _leg_index = 0;
 _cloaked = false;
@@ -139,17 +141,6 @@ if (abs(k_v_spd) &gt; 0.5)
     k_v_spd *= 0.75;
 else
     k_v_spd = 0;
-/*
-if (k_h_spd &gt; 0)
-    k_h_spd -= 0.25;
-else if (k_h_spd &lt; 0)
-    k_h_spd += 0.25;
-
-if (k_v_spd &gt; 0)
-    k_v_spd -= 0.25;
-else if (k_v_spd &lt; 0)
-    k_v_spd += 0.25;
-*/
 
 // Life and Death
 if (_hp &lt;= 0)
@@ -160,6 +151,12 @@ if (_hp &lt;= 0)
 // Can Shoot
 if (can_shoot &gt; 0)
     can_shoot--;
+
+// Facing
+if (look_dir &lt; 90 || look_dir &gt;= 270)
+    _facing = 'r';
+else
+    _facing = 'l';
 </string>
           </argument>
         </arguments>

@@ -3,8 +3,8 @@
   <caption></caption>
   <width>1024</width>
   <height>768</height>
-  <vsnap>64</vsnap>
-  <hsnap>64</hsnap>
+  <vsnap>32</vsnap>
+  <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -95,6 +95,7 @@
     <instance objName="Cultist" x="896" y="320" name="inst_45C7D05D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Cultist" x="640" y="192" name="inst_94F7DB04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Cultist" x="704" y="64" name="inst_95FA4E97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Portal" x="480" y="288" name="inst_D5EF6246" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tile_MarbleFloor" x="0" y="384" w="64" h="64" xo="0" yo="0" id="10001091" name="inst_1D110959" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
