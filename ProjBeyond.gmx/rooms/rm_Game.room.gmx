@@ -76,15 +76,6 @@
     <instance objName="Cultist" x="832" y="448" name="inst_2476DAB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Cultist" x="192" y="192" name="inst_2089B538" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Cultist" x="192" y="384" name="inst_228038AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Pointer" x="384" y="512" name="inst_4B0F5A5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Pointer" x="704" y="512" name="inst_F33F2034" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Pointer" x="448" y="320" name="inst_8BE16F62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Pointer" x="640" y="128" name="inst_AF7BD768" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Pointer" x="832" y="192" name="inst_088445E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Pointer" x="64" y="256" name="inst_B7479BAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Pointer" x="128" y="512" name="inst_9288880A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Pointer" x="704" y="640" name="inst_336E2FB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Pointer" x="896" y="512" name="inst_5DC2A809" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Cultist" x="384" y="576" name="inst_2770D77D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Cultist" x="192" y="448" name="inst_29F57C83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Cultist" x="320" y="704" name="inst_C96437A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

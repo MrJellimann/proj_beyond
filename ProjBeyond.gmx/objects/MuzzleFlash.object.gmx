@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>DirectionalLight</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,15 +25,39 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ambient_light = 0.05; // Natural light, based on GM Wolf's example
-character_light = false;
+            <string>event_inherited();
 
-light_surf = surface_create(view_wview, view_hview);
-
-application_surface_draw_enable(false);
-
-uniform_ambient = shader_get_uniform(shd_multiply, "u_fAmbient");
-sampler_light = shader_get_sampler_index(shd_multiply, "u_sLight");
+_light_sprite = sprMuzzleFlash;
+_light_index = 0;
+_size = 1;
+_intensity = 1;
+_direction = 0;
+_range = 256;
+_precise = true;
+alarm[0] = 3;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -56,55 +80,8 @@ sampler_light = shader_get_sampler_index(shd_multiply, "u_sLight");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//light_compute();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>light_draw();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>light_compute();
-
-//light_draw();
+            <string>_intensity *= 0.5;
+_size *= 0.5;
 </string>
           </argument>
         </arguments>

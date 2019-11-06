@@ -58,7 +58,7 @@ m_right = 0;
     //===== Combat =====//
     GameManager.player.look_dir = point_direction(GameManager.player.x, GameManager.player.y, mouse_x, mouse_y);
     
-    if (m_left)
+    if (m_left &amp;&amp; GameManager.player.can_shoot &lt;= 0)
     ///*
     // Ranged attack
     {
@@ -74,6 +74,11 @@ m_right = 0;
         b.image_angle = b.direction;
         b._direction = b.image_angle;
         b.speed = 14;
+        
+        var f = instance_create(GameManager.player.x, GameManager.player.y - 16, MuzzleFlash);
+        f._direction = b._direction;
+        
+        GameManager.player.can_shoot = 8;
     }
     //*/
     // Melee attack
@@ -121,7 +126,7 @@ k_down = keyboard_check(ord("S"));
 k_left = keyboard_check(ord("A"));
 k_right = keyboard_check(ord("D"));
 
-m_left = mouse_check_button_pressed(mb_left);
+m_left = mouse_check_button(mb_left);
 m_right = mouse_check_button_pressed(mb_right);
 
 if (instance_exists(GameManager.player))

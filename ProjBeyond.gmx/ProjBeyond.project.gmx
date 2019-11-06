@@ -39,6 +39,8 @@
     <sprite>sprites\sprTorso</sprite>
     <sprite>sprites\sprGun</sprite>
     <sprite>sprites\sprShadow</sprite>
+    <sprite>sprites\sprMuzzleFlash</sprite>
+    <sprite>sprites\hitbox_MuzzleFlash</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
@@ -81,6 +83,7 @@
     <object>objects\Obstacle</object>
     <object>objects\CelestialLight</object>
     <object>objects\Projectile</object>
+    <object>objects\MuzzleFlash</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Game</room>

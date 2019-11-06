@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
+_cloaked = true;
 </string>
           </argument>
         </arguments>

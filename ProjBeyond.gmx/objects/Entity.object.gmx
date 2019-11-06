@@ -36,12 +36,14 @@ image_speed = 0;
 _leg_sprite = sprite_index;
 _torso_sprite = sprite_index;
 _leg_index = 0;
+_cloaked = false;
 
 // Combat
 k_v_spd = 0;
 k_h_spd = 0;
 look_dir = 0;
 weapon_length = 20;
+can_shoot = 0;
 
 // Stats
 max_hp = 10;
@@ -151,6 +153,10 @@ if (_hp &lt;= 0)
 {
     instance_destroy();
 }
+
+// Can Shoot
+if (can_shoot &gt; 0)
+    can_shoot--;
 </string>
           </argument>
         </arguments>

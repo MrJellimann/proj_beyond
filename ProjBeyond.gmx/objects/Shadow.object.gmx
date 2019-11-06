@@ -114,7 +114,12 @@
                 //if (_leg_sprite == _torso_sprite)
                 if (true)
                 {
-                    draw_sprite_pos(sprShadow, 0,
+                    var _ind;
+                    if (_cloaked)
+                        _ind = 1;
+                    else
+                        _ind = 0;
+                    draw_sprite_pos(sprShadow, _ind,
                                 x - (sprite_width/2) + lengthdir_x(sprite_height/2, l_dir+10),
                                 y - (sprite_height/4*0) + lengthdir_y(sprite_height/2, l_dir+10),
                                 

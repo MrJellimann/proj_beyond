@@ -29,7 +29,8 @@
 
 _size = random_range(0.5, 1.25);
 _intensity = random_range(0.5, 0.9);
-_color = choose(c_yellow, c_red, c_blue, c_purple, c_green, c_white);
+//_color = choose(c_yellow, c_red, c_blue, c_purple, c_green, c_white);
+_color = c_dkgray;
 _range = 128 * _size;
 _direction = 0;
 </string>
