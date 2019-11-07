@@ -34,6 +34,7 @@ _color = make_color_rgb(irandom(255), irandom(255), irandom(255));
 _range = 128 * _size;
 _light_index = 1;
 _direction = 0;
+_portal_shake = 4;
 </string>
           </argument>
         </arguments>
@@ -57,6 +58,16 @@ _direction = 0;
           <argument>
             <kind>1</kind>
             <string>_color = make_color_rgb(irandom(255), irandom(255), irandom(255));
+
+if (instance_exists(GameManager.player))
+{
+    var _dist = distance_to_object(GameManager.player);
+    
+    if (instance_exists(GameManager.camera))
+    {
+        GameManager.camera.camera_shake = (_range - _dist) / _range * _portal_shake;
+    }
+}
 </string>
           </argument>
         </arguments>

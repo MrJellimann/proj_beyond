@@ -78,6 +78,8 @@ m_right = 0;
         var f = instance_create(GameManager.player.x, GameManager.player.y - GameManager.player._center_offset, MuzzleFlash);
         f._direction = b._direction;
         
+        GameManager.camera._camera_recoil = 12;
+        
         GameManager.player.can_shoot = 8;
     }
     //*/
@@ -127,7 +129,7 @@ k_left = keyboard_check(ord("A"));
 k_right = keyboard_check(ord("D"));
 
 m_left = mouse_check_button(mb_left);
-m_right = mouse_check_button_pressed(mb_right);
+m_right = mouse_check_button(mb_right);
 
 if (instance_exists(GameManager.player))
 {

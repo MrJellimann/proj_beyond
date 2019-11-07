@@ -37,6 +37,7 @@ camera_half_height = camera_height / 2;
 
 camera_shake = 0;
 camera_follow_rate = 0.75;
+_camera_recoil = 0;
 </string>
           </argument>
         </arguments>
@@ -72,8 +73,8 @@ camera_follow_rate = 0.75;
         _dir = point_direction(_target.x, _target.y - _target._center_offset, x, y);
         _dist = distance_to_point(_target.x, _target.y - _target._center_offset);
         
-        x = _target.x + lengthdir_x(_dist * camera_follow_rate, _dir);
-        y = _target.y - _target._center_offset + lengthdir_y(_dist * camera_follow_rate, _dir); 
+        x = _target.x + lengthdir_x(_dist * camera_follow_rate, _dir) + lengthdir_x(_camera_recoil, _dir-180);
+        y = _target.y - _target._center_offset + lengthdir_y(_dist * camera_follow_rate, _dir) + lengthdir_y(_camera_recoil, _dir-180); 
     }
 }
 
@@ -92,12 +93,25 @@ if (respect_mouse)
     y += lengthdir_y(_dist/10, _dir);
 }
 
-if (camera_shake &gt; 0)
-    camera_shake -= 0.1;
+// Camera shake
+if (camera_shake &gt; 0.25)
+{
+    camera_shake *= 0.75;
+    x += random(camera_shake) * choose(1, -1);
+    y += random(camera_shake) * choose(1, -1);
+}
+else
+    camera_shake = 0;
+// Recoil from weapons
+if (_camera_recoil &gt; 0.5)
+    _camera_recoil *= 0.75;
+else
+    _camera_recoil = 0;
 
+// Handle the view
 view_xview = x - camera_half_width;
 view_yview = y - camera_half_height;
-view_angle = choose(1, -1) * camera_shake;
+// view_angle = choose(1, -1) * camera_shake;
 </string>
           </argument>
         </arguments>
