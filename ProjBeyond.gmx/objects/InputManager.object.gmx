@@ -31,6 +31,21 @@ k_left = 0;
 k_right = 0;
 m_left = 0;
 m_right = 0;
+
+//g_device = gamepad_get_device_count();
+g_buttonA = 0;
+g_buttonB = 0;
+g_buttonX = 0;
+g_buttonY = 0;
+g_bumperR = 0;
+g_bumperL = 0;
+g_triggerR = 0;
+g_triggerL = 0;
+
+for (var i = 0; i &lt; gamepad_get_device_count(); i++)
+{
+    show_debug_message("Gamepad "+string(i)+" connected: "+string(gamepad_is_connected(i)));
+}
 </string>
           </argument>
         </arguments>
@@ -56,7 +71,7 @@ m_right = 0;
             <string>if (instance_exists(GameManager.player))
 {
     //===== Combat =====//
-    GameManager.player.look_dir = point_direction(GameManager.player.x, GameManager.player.y - GameManager.player._center_offset, mouse_x, mouse_y);
+    //GameManager.player.look_dir = point_direction(GameManager.player.x, GameManager.player.y - GameManager.player._center_offset, mouse_x, mouse_y);
     
     if (m_left &amp;&amp; GameManager.player.can_shoot &lt;= 0)
     ///*
@@ -78,7 +93,7 @@ m_right = 0;
         var f = instance_create(GameManager.player.x, GameManager.player.y - GameManager.player._center_offset, MuzzleFlash);
         f._direction = b._direction;
         
-        GameManager.camera._camera_recoil = 12;
+        GameManager.camera._camera_recoil = 4;
         
         GameManager.player.can_shoot = 8;
     }
@@ -123,57 +138,93 @@ m_right = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>k_up = keyboard_check(ord("W"));
-k_down = keyboard_check(ord("S"));
-k_left = keyboard_check(ord("A"));
-k_right = keyboard_check(ord("D"));
-
-m_left = mouse_check_button(mb_left);
-m_right = mouse_check_button(mb_right);
-
-if (instance_exists(GameManager.player))
+            <string>if (instance_exists(GameManager.player))
 {
-    //===== Player's movement =====//
-    
-    // Vertical movement
-    if (k_up &amp;&amp; !k_down)
+    //===== Player's gamepad movement =====//
+    if (gamepad_is_connected(0))
     {
-        if (GameManager.player.v_spd &gt; -GameManager.player.spd_max)
-            GameManager.player.v_spd -= GameManager.player.spd_amount;
+        // Vertical movement
+        if (abs(gamepad_axis_value(0, gp_axislv)) &gt; 0.1)
+            GameManager.player.v_spd = gamepad_axis_value(0, gp_axislv) * GameManager.player.spd_max;
+        else
+            GameManager.player.v_spd = 0;
+        
+        // Horizontal movement
+        if (abs(gamepad_axis_value(0, gp_axislh)) &gt; 0.1)
+            GameManager.player.h_spd = gamepad_axis_value(0, gp_axislh) * GameManager.player.spd_max;
+        else
+            GameManager.player.h_spd = 0;
+        
+        var xx, yy;
+        xx = 1 * gamepad_axis_value(0, gp_axisrh);
+        yy = 1 * gamepad_axis_value(0, gp_axisrv);
+        
+        if (max(abs(xx), abs(yy)) &gt; 0.1)
+            GameManager.player.look_dir = point_direction(GameManager.player.x, GameManager.player.y - GameManager.player._center_offset, GameManager.player.x + xx, GameManager.player.y - GameManager.player._center_offset + yy);
+            
+        GameManager.camera._respect_mx = (250 * xx) + GameManager.player.x;
+        GameManager.camera._respect_my = (250 * yy) + GameManager.player.y;
+        
+        m_left = gamepad_button_check(0, gp_shoulderr);
+        m_right = gamepad_button_check(0, gp_shoulderl);
     }
-    else if (!k_up &amp;&amp; k_down)
-    {
-        if (GameManager.player.v_spd &lt; GameManager.player.spd_max)
-            GameManager.player.v_spd += GameManager.player.spd_amount;
-    }
+    //===== Player's keyboard movement =====//
     else
     {
-        if (GameManager.player.v_spd &gt; 0)
-            GameManager.player.v_spd -= GameManager.player.spd_amount;
-        else if (GameManager.player.v_spd &lt; 0)
-            GameManager.player.v_spd += GameManager.player.spd_amount;
-    }
+        k_up = keyboard_check(ord("W"));
+        k_down = keyboard_check(ord("S"));
+        k_left = keyboard_check(ord("A"));
+        k_right = keyboard_check(ord("D"));
+        
+        m_left = mouse_check_button(mb_left);
+        m_right = mouse_check_button(mb_right);
+        
+        GameManager.player.look_dir = point_direction(GameManager.player.x, GameManager.player.y - GameManager.player._center_offset, mouse_x, mouse_y);
+        GameManager.camera._respect_mx = mouse_x;
+        GameManager.camera._respect_my = mouse_y;
     
-    // Horizontal Movement
-    if (k_left &amp;&amp; !k_right)
-    {
-        if (GameManager.player.h_spd &gt; -GameManager.player.spd_max)
-            GameManager.player.h_spd -= GameManager.player.spd_amount;
+        // Vertical movement
+        if (k_up &amp;&amp; !k_down)
+        {
+            if (GameManager.player.v_spd &gt; -GameManager.player.spd_max)
+                GameManager.player.v_spd -= GameManager.player.spd_amount;
+        }
+        else if (!k_up &amp;&amp; k_down)
+        {
+            if (GameManager.player.v_spd &lt; GameManager.player.spd_max)
+                GameManager.player.v_spd += GameManager.player.spd_amount;
+        }
+        else
+        {
+            if (GameManager.player.v_spd &gt; 0)
+                GameManager.player.v_spd -= GameManager.player.spd_amount;
+            else if (GameManager.player.v_spd &lt; 0)
+                GameManager.player.v_spd += GameManager.player.spd_amount;
+        }
+        
+        // Horizontal Movement
+        if (k_left &amp;&amp; !k_right)
+        {
+            if (GameManager.player.h_spd &gt; -GameManager.player.spd_max)
+                GameManager.player.h_spd -= GameManager.player.spd_amount;
+        }
+        else if (!k_left &amp;&amp; k_right)
+        {
+            if (GameManager.player.h_spd &lt; GameManager.player.spd_max)
+                GameManager.player.h_spd += GameManager.player.spd_amount;
+        }
+        else
+        {
+            if (GameManager.player.h_spd &gt; 0)
+                GameManager.player.h_spd -= GameManager.player.spd_amount;
+            else if (GameManager.player.h_spd &lt; 0)
+                GameManager.player.h_spd += GameManager.player.spd_amount;
+        }
+        
+        // Player's look_dir
+        GameManager.player.look_dir = point_direction(GameManager.player.x, GameManager.player.y, mouse_x, mouse_y);
+        //===== Keyboard Testing =====//
     }
-    else if (!k_left &amp;&amp; k_right)
-    {
-        if (GameManager.player.h_spd &lt; GameManager.player.spd_max)
-            GameManager.player.h_spd += GameManager.player.spd_amount;
-    }
-    else
-    {
-        if (GameManager.player.h_spd &gt; 0)
-            GameManager.player.h_spd -= GameManager.player.spd_amount;
-        else if (GameManager.player.h_spd &lt; 0)
-            GameManager.player.h_spd += GameManager.player.spd_amount;
-    }
-    
-    //===== Testing =====//
 }
 </string>
           </argument>

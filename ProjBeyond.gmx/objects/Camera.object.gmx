@@ -28,6 +28,8 @@
             <string>_target = noone;
 
 respect_mouse = true;
+_respect_mx = x;
+_respect_my = y;
 
 camera_width = view_wview;
 camera_height = view_hview;
@@ -80,14 +82,16 @@ _camera_recoil = 0;
 
 if (respect_mouse)
 {
+    // mouse_x, mouse_y
+
     var _dist, _dir;
     
     if (_target != noone)
-        _dir = point_direction(_target.x, _target.y - _target._center_offset, mouse_x, mouse_y);
+        _dir = point_direction(_target.x, _target.y - _target._center_offset, _respect_mx, _respect_my);
     else
-        _dir = point_direction(x, y, mouse_x, mouse_y);
+        _dir = point_direction(x, y, _respect_mx, _respect_my);
     
-    _dist = distance_to_point(mouse_x, mouse_y);
+    _dist = distance_to_point(_respect_mx, _respect_my);
     
     x += lengthdir_x(_dist/10, _dir);
     y += lengthdir_y(_dist/10, _dir);
