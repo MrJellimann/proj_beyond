@@ -73,8 +73,8 @@ if (instance_exists(Player))
 {
     if (irandom(100) &lt;= 1)
     {
-        var b = instance_create(x, y, Projectile);
-        b.direction = point_direction(x, y, Player.x, Player.y);
+        var b = instance_create(x, y - _center_offset, Projectile);
+        b.direction = point_direction(x, y - _center_offset, Player.x, Player.y);
         b.speed = 4;
         b.image_angle = b.direction;
         b._direction = b.image_angle;
