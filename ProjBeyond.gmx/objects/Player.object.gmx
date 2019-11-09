@@ -32,6 +32,8 @@ _leg_sprite_right = sprWalkingLegsRight;
 _torso_sprite = sprTorso;
 _leg_index = 0;
 _center_offset = 20;
+max_hp = 100;
+_hp = max_hp;
 </string>
           </argument>
         </arguments>

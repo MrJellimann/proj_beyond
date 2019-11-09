@@ -44,6 +44,8 @@
     <sprite>sprites\hitbox_MuzzleFlash</sprite>
     <sprite>sprites\sprPortal</sprite>
     <sprite>sprites\sprLeftArm</sprite>
+    <sprite>sprites\sprHealthbarOutline</sprite>
+    <sprite>sprites\sprHealthbar</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
