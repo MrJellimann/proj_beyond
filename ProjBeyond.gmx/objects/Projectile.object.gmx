@@ -70,6 +70,9 @@ _light_index = 0;
 image_angle = direction;
 _direction = image_angle;
 
+if (onWall(x, y))
+    instance_destroy();
+
 if (_drift != 0)
 {
     direction += choose(1, -1) * _drift;

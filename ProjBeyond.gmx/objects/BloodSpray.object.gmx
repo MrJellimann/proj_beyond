@@ -61,10 +61,15 @@ _color = c_red;//c_maroon;
         //draw_set_alpha(1);
         
         var _scale = random_range(0.5, 0.8);
-        draw_sprite_ext(_sprite, 0,
-                        x + (random(_size) * choose(1, -1)),
-                        y + (random(_size) * choose(1, -1)),
-                        _scale, _scale, irandom(359), _color, 0.9);
+        var xpos, ypos;
+        xpos = x + (random(_size) * choose(1, -1));
+        ypos = y + (random(_size) * choose(1, -1));
+        
+        if (onFloor(xpos, ypos))
+            draw_sprite_ext(_sprite, 0,
+                            xpos,
+                            ypos,
+                            _scale, _scale, irandom(359), _color, 0.9);
     surface_reset_target();
 }
 
@@ -104,10 +109,15 @@ if (irandom(20) &lt;= 1)
             repeat (irandom_range(1, _size))
             {
                 var _scale = random_range(0.5, 0.8);
-                draw_sprite_ext(_sprite, 0,
-                                x + (random(_size) * choose(1, -1)),
-                                y + (random(_size) * choose(1, -1)),
-                                _scale, _scale, irandom(359), _color, 0.9);
+                var xpos, ypos;
+                xpos = x + (random(_size) * choose(1, -1));
+                ypos = y + (random(_size) * choose(1, -1));
+                
+                if (onFloor(xpos, ypos))
+                    draw_sprite_ext(_sprite, 0,
+                                    xpos,
+                                    ypos,
+                                    _scale, _scale, irandom(359), _color, 0.9);
             }
             //draw_set_alpha(1);
         surface_reset_target();

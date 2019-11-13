@@ -48,6 +48,7 @@
     <sprite>sprites\sprLeftArm</sprite>
     <sprite>sprites\sprHealthbarOutline</sprite>
     <sprite>sprites\sprHealthbar</sprite>
+    <sprite>sprites\sprSkyChurch</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
@@ -55,6 +56,7 @@
     <background>background\tile_MarbleFloor</background>
     <background>background\tile_MarbleFloor2</background>
     <background>background\background4</background>
+    <background>background\tile_exampleWall</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -63,6 +65,10 @@
     <script>scripts\get_melee_sprite.gml</script>
     <script>scripts\light_compute.gml</script>
     <script>scripts\light_draw.gml</script>
+    <script>scripts\onFloor.gml</script>
+    <script>scripts\onWall.gml</script>
+    <script>scripts\floorAt.gml</script>
+    <script>scripts\wallAt.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_multiply.shader</shader>
@@ -99,6 +105,10 @@
     <room>rooms\rm_Tutorial</room>
     <room>rooms\rm_Game</room>
   </rooms>
+  <constants number="2">
+    <constant name="FLOOR_LAYER">25</constant>
+    <constant name="WALL_LAYER">5</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

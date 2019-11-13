@@ -78,11 +78,11 @@ _center_offset = 20;
             <string>// Horizontal
 if (h_spd != 0)
 {
-    if (place_free(x + h_spd, y))
+    if (place_free(x + h_spd, y) &amp;&amp; onFloor(x + h_spd, y) &amp;&amp; !onWall(x + h_spd, y))
         x += h_spd;
     else
     {
-        while (place_free(x + sign(h_spd), y))
+        while (place_free(x + sign(h_spd), y) &amp;&amp; onFloor(x + sign(h_spd), y) &amp;&amp; !onWall(x + sign(h_spd), y))
         {
             x += sign(h_spd);
         }
@@ -92,11 +92,11 @@ if (h_spd != 0)
 // Horizontal knockback
 if (k_h_spd != 0)
 {
-    if (place_free(x + k_h_spd, y))
+    if (place_free(x + k_h_spd, y) &amp;&amp; onFloor(x + k_h_spd, y) &amp;&amp; !onWall(x + k_h_spd, y))
         x += k_h_spd;
     else
     {
-        while (place_free(x + sign(k_h_spd), y))
+        while (place_free(x + sign(k_h_spd), y) &amp;&amp; onFloor(x + sign(k_h_spd), y) &amp;&amp; !onWall(x + sign(k_h_spd), y))
         {
             x += sign(k_h_spd);
         }
@@ -106,11 +106,11 @@ if (k_h_spd != 0)
 // Vertical
 if (v_spd != 0)
 {
-    if (place_free(x, y + v_spd))
+    if (place_free(x, y + v_spd) &amp;&amp; onFloor(x, y + v_spd) &amp;&amp; !onWall(x, y + v_spd))
         y += v_spd;
     else
     {
-        while (place_free(x, y + sign(v_spd)))
+        while (place_free(x, y + sign(v_spd)) &amp;&amp; onFloor(x, y + sign(v_spd)) &amp;&amp; !onWall(x, y + sign(v_spd)))
         {
             y += sign(v_spd);
         }
@@ -120,11 +120,11 @@ if (v_spd != 0)
 // Vertical knockback
 if (k_v_spd != 0)
 {
-    if (place_free(x, y + k_v_spd))
+    if (place_free(x, y + k_v_spd) &amp;&amp; onFloor(x, y + k_v_spd) &amp;&amp; !onWall(x, y + k_v_spd))
         y += k_v_spd;
     else
     {
-        while (place_free(x, y + sign(k_v_spd)))
+        while (place_free(x, y + sign(k_v_spd)) &amp;&amp; onFloor(x, y + sign(k_v_spd)) &amp;&amp; !onWall(x, y + sign(k_v_spd)))
         {
             y += sign(k_v_spd);
         }
