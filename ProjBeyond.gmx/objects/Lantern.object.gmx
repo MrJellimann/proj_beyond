@@ -31,6 +31,11 @@ _size = random_range(0.8, 0.9);
 _intensity = random_range(0.5, 0.6);
 //_color = choose(c_yellow, c_red, c_blue, c_purple, c_green, c_white);
 _color = c_ltgray;
+
+// Temporary
+_color = c_white;
+_size = 1.5;
+
 _range = 128 * _size;
 _direction = 0;
 </string>

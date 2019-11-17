@@ -87,6 +87,9 @@
     <instance objName="Cultist" x="608" y="832" name="inst_8DAC477C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Cultist" x="896" y="480" name="inst_744C75DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Cultist" x="1056" y="640" name="inst_E9863A7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="480" y="96" name="inst_103D9FDF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="864" y="736" name="inst_27FC50F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="768" y="512" name="inst_A8B000A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tile_Dirt" x="0" y="0" w="64" h="64" xo="0" yo="0" id="10001399" name="inst_9B187EBA" depth="25" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -283,19 +286,6 @@
     <tile bgName="tile_MarbleFloor" x="128" y="896" w="64" h="64" xo="0" yo="0" id="10001604" name="inst_DCA4D864" depth="25" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tile_MarbleFloor" x="64" y="896" w="64" h="64" xo="0" yo="0" id="10001605" name="inst_4BD86821" depth="25" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tile_MarbleFloor" x="64" y="832" w="64" h="64" xo="0" yo="0" id="10001606" name="inst_2971818D" depth="25" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="384" y="192" w="64" h="64" xo="0" yo="0" id="10001607" name="inst_41795192" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="384" y="256" w="64" h="64" xo="0" yo="0" id="10001608" name="inst_2E398C1D" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="384" y="320" w="64" h="64" xo="0" yo="0" id="10001609" name="inst_7974C6D1" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="448" y="320" w="64" h="64" xo="0" yo="0" id="10001610" name="inst_B9D07B18" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="512" y="320" w="64" h="64" xo="0" yo="0" id="10001611" name="inst_9D979734" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="576" y="320" w="64" h="64" xo="0" yo="0" id="10001612" name="inst_699038F1" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="576" y="384" w="64" h="64" xo="0" yo="0" id="10001613" name="inst_B71A329D" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="512" y="384" w="64" h="64" xo="0" yo="0" id="10001614" name="inst_43DA17D6" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="512" y="448" w="64" h="64" xo="0" yo="0" id="10001615" name="inst_6CD39374" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="512" y="512" w="64" h="64" xo="0" yo="0" id="10001616" name="inst_BAC5A285" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="448" y="512" w="64" h="64" xo="0" yo="0" id="10001617" name="inst_F9DDA61A" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background4" x="384" y="512" w="64" h="64" xo="0" yo="0" id="10001618" name="inst_469A93E6" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tile_exampleWall" x="800" y="832" w="64" h="64" xo="0" yo="0" id="10001619" name="inst_0F680B9D" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

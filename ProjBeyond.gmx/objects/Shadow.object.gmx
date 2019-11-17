@@ -49,6 +49,8 @@
           <argument>
             <kind>1</kind>
             <string>surface_set_target(shadow_surf);
+    // Experimenting
+    // draw_set_blend_mode(bm_add);
     // Clean surface
     if (instance_exists(GameManager.sun))
         draw_clear_alpha(GameManager.sun._color, GameManager.sun._intensity);
@@ -95,15 +97,6 @@
             
             if (near_light != noone)
             {
-                // Attempts to use blend mode based on direction
-                // Initial problem: shadows only turn white when below character
-                /*if (l_dir &gt; 180 || l_dir &lt;= 359)
-                    draw_set_blend_mode(bm_inv_dest_colour);
-                else
-                    draw_set_blend_mode(bm_max);
-                */
-                //draw_set_blend_mode_ext(bm_src_alpha_sat, bm_zero);
-                //draw_set_blend_mode(bm_add);
                 d3d_set_fog(true, c_black, 0, 1);
                 
                 if (l_dir &gt; 180 || l_dir &lt;= 359)
@@ -170,6 +163,107 @@
             }
         }
     }
+    
+    with (Solid)
+    {
+        var counter = 0;
+        repeat (instance_number(Light))
+        {
+            var near_light;
+            near_light = instance_find(Light, counter++);
+    
+            if (!near_light._precise)
+            {
+                if (distance_to_object(near_light) &gt; near_light._range)
+                    near_light = noone;
+                if (near_light != noone)
+                {
+                    if (collision_line(x, y, near_light.x, near_light.y, Obstacle, false, true))
+                        near_light = noone;
+                }
+            }
+            else
+            {
+                if (!place_meeting(x, y, near_light))
+                    near_light = noone;
+                
+                if (near_light != noone)
+                {
+                    if (collision_line(x, y, near_light.x, near_light.y, Obstacle, false, true))
+                        near_light = noone;
+                }
+            }
+            
+            var l_dir;
+            
+            if (near_light != noone)
+                l_dir = point_direction(near_light.x, near_light.y, x, y);
+            else
+                l_dir = 180 - 15;
+            
+            if (near_light != noone)
+            {
+                var l_dist;
+                l_dist = (1 - (distance_to_object(near_light) / near_light._range)) * 256;
+                
+                d3d_set_fog(true, c_black, 0, 1);
+                    var x1, y1, x2, y2, x3, y3, x4, y4;
+                    // Done!
+                    if (l_dir &gt;= 45 &amp;&amp; l_dir &lt; 135)
+                    {
+                        x3 = x + (sprite_width/2);
+                        y3 = y + (sprite_height/2);
+                        x4 = x - (sprite_width/2);
+                        y4 = y + (sprite_height/2);
+                        x1 = x4 + lengthdir_x(l_dist, point_direction(near_light.x, near_light.y, x4, y4));
+                        y1 = y4 + lengthdir_y(l_dist, point_direction(near_light.x, near_light.y, x4, y4));
+                        x2 = x3 + lengthdir_x(l_dist, point_direction(near_light.x, near_light.y, x3, y3));
+                        y2 = y3 + lengthdir_y(l_dist, point_direction(near_light.x, near_light.y, x3, y3));
+                    }
+                    // Done!
+                    else if (l_dir &gt;= 135 &amp;&amp; l_dir &lt; 225)
+                    {
+                        x3 = x + (sprite_width/2);
+                        y3 = y - (sprite_height/2);
+                        x4 = x + (sprite_width/2);
+                        y4 = y + (sprite_height/2);
+                        x1 = x4 + lengthdir_x(l_dist, point_direction(near_light.x, near_light.y, x4, y4));
+                        y1 = y4 + lengthdir_y(l_dist, point_direction(near_light.x, near_light.y, x4, y4));
+                        x2 = x3 + lengthdir_x(l_dist, point_direction(near_light.x, near_light.y, x3, y3));
+                        y2 = y3 + lengthdir_y(l_dist, point_direction(near_light.x, near_light.y, x3, y3));
+                    }
+                    // Done!
+                    else if (l_dir &gt;= 225 &amp;&amp; l_dir &lt; 315)
+                    {
+                        x3 = x - (sprite_width/2);
+                        y3 = y - (sprite_height/2);
+                        x4 = x + (sprite_width/2);
+                        y4 = y - (sprite_height/2);
+                        x1 = x4 + lengthdir_x(l_dist, point_direction(near_light.x, near_light.y, x4, y4));
+                        y1 = y4 + lengthdir_y(l_dist, point_direction(near_light.x, near_light.y, x4, y4));
+                        x2 = x3 + lengthdir_x(l_dist, point_direction(near_light.x, near_light.y, x3, y3));
+                        y2 = y3 + lengthdir_y(l_dist, point_direction(near_light.x, near_light.y, x3, y3));
+                    }
+                    // Done!
+                    else if (l_dir &lt; 45 || l_dir &gt;= 315)
+                    {
+                        x3 = x - (sprite_width/2);
+                        y3 = y - (sprite_height/2);
+                        x4 = x - (sprite_width/2);
+                        y4 = y + (sprite_height/2);
+                        x1 = x4 + lengthdir_x(l_dist, point_direction(near_light.x, near_light.y, x4, y4));
+                        y1 = y4 + lengthdir_y(l_dist, point_direction(near_light.x, near_light.y, x4, y4));
+                        x2 = x3 + lengthdir_x(l_dist, point_direction(near_light.x, near_light.y, x3, y3));
+                        y2 = y3 + lengthdir_y(l_dist, point_direction(near_light.x, near_light.y, x3, y3));
+                    }
+                    
+                    draw_sprite_pos(sprite_index, image_index, x1, y1, x2, y2, x3, y3, x4, y4,
+                                    0.8 * (1 - (distance_to_object(near_light) / near_light._range)));
+                d3d_set_fog(false, c_white, 0, 0);
+            }
+        }
+    }
+    draw_set_blend_mode(bm_normal);
 surface_reset_target();
 </string>
           </argument>

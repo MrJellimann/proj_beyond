@@ -72,6 +72,12 @@ for (var i = 0; i &lt; gamepad_get_device_count(); i++)
 {
     //===== Combat =====//
     //GameManager.player.look_dir = point_direction(GameManager.player.x, GameManager.player.y - GameManager.player._center_offset, mouse_x, mouse_y);
+    // Testing
+    if (mouse_check_button_pressed(mb_right))
+    {
+        instance_create(mouse_x, mouse_y, Lantern);
+    }
+    
     
     if (m_left &amp;&amp; GameManager.player.can_shoot &lt;= 0)
     ///*

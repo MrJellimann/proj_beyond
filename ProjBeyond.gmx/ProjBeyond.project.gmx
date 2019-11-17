@@ -49,6 +49,7 @@
     <sprite>sprites\sprHealthbarOutline</sprite>
     <sprite>sprites\sprHealthbar</sprite>
     <sprite>sprites\sprSkyChurch</sprite>
+    <sprite>sprites\sprWall</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
@@ -100,10 +101,12 @@
     <object>objects\CelestialLight</object>
     <object>objects\Projectile</object>
     <object>objects\MuzzleFlash</object>
+    <object>objects\Solid</object>
+    <object>objects\Wall</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Tutorial</room>
     <room>rooms\rm_Game</room>
+    <room>rooms\rm_Tutorial</room>
   </rooms>
   <constants number="2">
     <constant name="FLOOR_LAYER">25</constant>
