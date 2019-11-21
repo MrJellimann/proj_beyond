@@ -50,6 +50,8 @@
     <sprite>sprites\sprHealthbar</sprite>
     <sprite>sprites\sprSkyChurch</sprite>
     <sprite>sprites\sprWall</sprite>
+    <sprite>sprites\asdf</sprite>
+    <sprite>sprites\sprite43</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_Dirt</background>
@@ -75,38 +77,47 @@
     <shader type="GLSLES">shaders\shd_multiply.shader</shader>
   </shaders>
   <objects name="objects">
+    <objects name="Lights">
+      <object>objects\Light</object>
+      <object>objects\DirectionalLight</object>
+      <object>objects\CircleLight</object>
+      <object>objects\CelestialLight</object>
+    </objects>
+    <objects name="Effects">
+      <object>objects\BloodSpray</object>
+      <object>objects\MuzzleFlash</object>
+    </objects>
+    <objects name="Surfaces">
+      <object>objects\Lighting</object>
+      <object>objects\Shadow</object>
+      <object>objects\Ground</object>
+    </objects>
+    <objects name="Hitboxes">
+      <object>objects\MeleeAttack</object>
+      <object>objects\Projectile</object>
+    </objects>
     <object>objects\Camera</object>
     <object>objects\InputManager</object>
     <object>objects\GameManager</object>
     <object>objects\Entity</object>
     <object>objects\Item</object>
     <object>objects\Player</object>
-    <object>objects\MeleeAttack</object>
-    <object>objects\Lighting</object>
-    <object>objects\Light</object>
-    <object>objects\Ground</object>
-    <object>objects\BloodSpray</object>
     <object>objects\Cultist</object>
     <object>objects\MeleeWeapon</object>
     <object>objects\RangedWeapon</object>
-    <object>objects\CircleLight</object>
-    <object>objects\DirectionalLight</object>
     <object>objects\Lantern</object>
-    <object>objects\Portal</object>
+    <object>objects\EnemyPortal</object>
     <object>objects\Pointer</object>
     <object>objects\Follower</object>
     <object>objects\Spinner</object>
-    <object>objects\Shadow</object>
     <object>objects\Obstacle</object>
-    <object>objects\CelestialLight</object>
-    <object>objects\Projectile</object>
-    <object>objects\MuzzleFlash</object>
     <object>objects\Solid</object>
     <object>objects\Wall</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Game</room>
     <room>rooms\rm_Tutorial</room>
+    <room>rooms\rm_Game</room>
+    <room>rooms\rm_EngineSouth</room>
   </rooms>
   <constants number="2">
     <constant name="FLOOR_LAYER">25</constant>

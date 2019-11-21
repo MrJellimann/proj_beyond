@@ -49,6 +49,47 @@
           <argument>
             <kind>1</kind>
             <string>surface_set_target(shadow_surf);
+    draw_clear_alpha(c_white, 0);
+    with (Entity)
+    {
+        d3d_set_fog(true, c_black, 0, 1);
+            var x1, y1, x2, y2, x3, y3, x4, y4;
+            x3 = x + (sprite_width/2);
+            y3 = y - (sprite_height/6);
+            x4 = x - (sprite_width/2);
+            y4 = y - (sprite_height/6);
+            x1 = x4;
+            y1 = y + (sprite_height/3);
+            x2 = x3;
+            y2 = y + (sprite_height/3);
+            draw_sprite_pos(_shadow_sprite, _shadow_index,
+                            x1, y1, x2, y2, x3, y3, x4, y4, 0.5);
+        d3d_set_fog(false, c_white, 0, 0);
+    }
+surface_reset_target();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// DEPRECATED BECAUSE DYNAMIC WALL SHADOWS DON'T LOOK GREAT
+/*
+surface_set_target(shadow_surf);
     // Experimenting
     // draw_set_blend_mode(bm_add);
     // Clean surface
@@ -265,6 +306,7 @@
     }
     draw_set_blend_mode(bm_normal);
 surface_reset_target();
+*/
 </string>
           </argument>
         </arguments>

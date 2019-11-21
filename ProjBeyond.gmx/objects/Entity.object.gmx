@@ -39,6 +39,8 @@ _leg_sprite_right = sprite_index;
 _torso_sprite = sprite_index;
 _leg_index = 0;
 _cloaked = false;
+_shadow_sprite = sprShadow;
+_shadow_index = 0;
 
 // Combat
 k_v_spd = 0;

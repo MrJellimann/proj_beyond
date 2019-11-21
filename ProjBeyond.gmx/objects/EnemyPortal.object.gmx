@@ -3,7 +3,7 @@
   <spriteName>sprPortal</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>5</depth>
   <persistent>0</persistent>
   <parentName>CircleLight</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -35,6 +35,9 @@ _range = 128 * _size;
 _light_index = 1;
 _direction = 0;
 _portal_shake = 2;
+_num_enemies = 10;
+_enemy_type = Cultist;
+_spawn_cooldown = 0;
 </string>
           </argument>
         </arguments>
@@ -68,6 +71,19 @@ if (instance_exists(GameManager.player))
         GameManager.camera.camera_shake = (_range - _dist) / _range * _portal_shake;
     }
 }
+
+if (irandom(100) &lt;= 1 &amp;&amp; _spawn_cooldown &lt;= 0 &amp;&amp; _num_enemies &gt; 0)
+{
+    instance_create(x, y, _enemy_type);
+    _spawn_cooldown = 50;
+    _num_enemies--;
+}
+
+if (_spawn_cooldown &gt; 0)
+    _spawn_cooldown--;
+
+if (_num_enemies &lt;= 0)
+    instance_destroy();
 </string>
           </argument>
         </arguments>

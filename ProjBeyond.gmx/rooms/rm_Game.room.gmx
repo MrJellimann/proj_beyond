@@ -60,6 +60,10 @@
     <instance objName="Wall" x="416" y="160" name="inst_FDFE7CAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Wall" x="832" y="320" name="inst_97983830" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Wall" x="384" y="544" name="inst_D05E935A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="EnemyPortal" x="928" y="672" name="inst_78DEF6FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="EnemyPortal" x="64" y="64" name="inst_A33C5D66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="EnemyPortal" x="64" y="704" name="inst_E4D72E33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="EnemyPortal" x="960" y="64" name="inst_FC3D3C0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tile_MarbleFloor" x="0" y="384" w="64" h="64" xo="0" yo="0" id="10001091" name="inst_1D110959" depth="25" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
