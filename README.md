@@ -1,4 +1,2 @@
 # proj_beyond
-Public repository for Game Off 2019
-
-The theme for this game jam is 'Leaps and Bounds'
+Prototype developed during Game-Off 2019, but was unable to finish due to projects at school.
