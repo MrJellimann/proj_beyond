@@ -115,8 +115,8 @@
     <object>objects\Wall</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Tutorial</room>
     <room>rooms\rm_Game</room>
+    <room>rooms\rm_Tutorial</room>
     <room>rooms\rm_EngineSouth</room>
   </rooms>
   <constants number="2">

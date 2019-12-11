@@ -23,5 +23,9 @@
     <frame index="0">images\sprCultist_0.png</frame>
     <frame index="1">images\sprCultist_1.png</frame>
     <frame index="2">images\sprCultist_2.png</frame>
+    <frame index="3">images\sprCultist_3.png</frame>
+    <frame index="4">images\sprCultist_4.png</frame>
+    <frame index="5">images\sprCultist_5.png</frame>
+    <frame index="6">images\sprCultist_6.png</frame>
   </frames>
 </sprite>
